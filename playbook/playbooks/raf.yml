@@ -1,0 +1,58 @@
+---
+- hosts: all
+  remote_user: root
+
+  vars:
+    # Repository Path
+    path_rhel6 : /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64
+    # Backup Path
+    backup_path_rhel6 : /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/backup
+    # Username
+    user: codendiadm
+    # Group
+    group: codendiadm
+    #platform in this cas the repo should be already configured under /etc/yum.repo
+    platform : tuleap*
+    #Tuleap repo name
+    repo : TuleapDirect
+    #repo infos
+    #repo URL
+    repoUrl: tuleap.net/file/pub/tuleap/yum/tuleap/rhel/6/stable/x86_64/
+    #repo credentials
+    repoLogin: terzino
+    repoPasswd: test123
+    #Proxy env
+    environment:
+       http_proxy : http://codex_support:\+fJs\&1Q4@lps5.sgp.st.com:8080
+       https_proxy: http://codex_support:\+fJs\&1Q4@lps5.sgp.st.com:8080
+
+  tasks:
+    - name: Add {{ repo }} repository
+      yum_repository:
+        name: "{{ repo }}"
+        description: Install packages directly from tuleap's repo
+        baseurl: https://{{ repoLogin }}:{{ repoPasswd }}@{{ repoUrl }}
+        enabled: no
+        gpgcheck: no
+
+    - name: create  {{ path_rhel6 }} if it doesn't exist
+      file: path={{ path_rhel6 }} state=directory mode=0755
+
+    - name: create Backup folder {{ backup_path_rhel6 }} if it doesn't exist
+      file: path={{ backup_path_rhel6 }} state=directory mode=0755
+
+    - name: Backup old rpms
+      command: cp -r {{ path_rhel6 }} {{ backup_path_rhel6 }}
+
+    - name: Download rpms under {{ path_rhel6 }}
+      command: chdir={{ path_rhel6 }}
+               yum update {{ platform }} -y --enablerepo={{ repo }} --enablerepo=epel --downloadonly --downloaddir={{ path_rhel6 }}
+
+    - name: create repository under {{ path_rhel6 }}
+      command: /usr/bin/createrepo -s sha {{ path_rhel6 }}
+
+    - name: change repositrie's files permissions and ownsership
+      file: path={{ path_rhel6 }} owner={{ user }} group={{ group }} mode=0755 recurse=yes
+
+    - name: change repodata permission to 777
+      file: path={{ path_rhel6 }}/repodata mode=0777 recurse=yes
