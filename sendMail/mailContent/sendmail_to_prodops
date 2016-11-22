@@ -1,0 +1,68 @@
+#in this part the sections must be intact
+for now there are 3 sections
+=> TO
+=> SUBJECT
+=> BODY
+
+#you can ad users using this format : mail1, mail2, mail3 ...
+===TO
+mohamed-rafik.benmansour@st.com
+TO===
+
+===SUBJECT
+FW: Consigne pour arrêt Codex: =upgradeDate=
+SUBJECT===
+
+===BODY
+<div style='font-size:10pt;font-family:"Tahoma",sans-serif'>
+   Bonjour,
+</div>
+<br>
+<table style='width:100.0%;background:#737B9C;'>
+   <tr>
+      <td colspan=2 style='background:#EEEEF8;'>
+         <span style='font-size:8.5pt;font-family:"Tahoma",sans-serif'>
+         <b>Nom:</b>[CROLLES-00] Maintenance =upgradeInstance=, ne pas tenir compte des alarmes 
+         </span>
+      </td>
+   </tr>
+   <tr>
+      <td style='background:#EEEEF8;'>
+         <div style='font-size:8.5pt;font-family:"Tahoma",sans-serif'>
+            <b>Description:</b>
+            <br>Validité:
+            <br>=====<br>
+            =upgradeDate= de =opretionLaunchTime= à =opretionFinishTime= CET
+            <br><br>Contexte:
+            <br>======<br>
+            Maintenance applicative de Codex
+            <br><br>Actions:
+            <br>=====<br>
+            En cas d'apparition d'alarme HPOV concernant l'application CODEX pendant cette période: 
+            <br>- Owner les alarmes correspondantes, NE PAS faire de ticket Remedy.
+            <br>- A =opretionFinishTime= (fin de la période), acquitter ces alarmes et reprendre la supervision normale pour =upgradeInstance=.
+            <br><br>Demandeur:
+            <br>=======<br>
+            Codex team
+            <br>
+         </div>
+      </td>
+      <td style='background:#EEEEF8;'>
+
+        <div style='font-size:8.5pt;font-family:"Tahoma",sans-serif'>
+            <b>Du:</b>
+            =shortUpgradeDate=
+            <br>
+            <b>Au:</b>
+            =shortUpgradeDate=
+        </div>
+      </td>
+   </tr>
+</table>
+<br>
+<div style='font-size:10pt;font-family:"Tahoma",sans-serif'>
+   Cordialement,<br>
+   Codex Team.
+</div>
+</div>
+BODY===

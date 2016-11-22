@@ -1,0 +1,88 @@
+#!/usr/bin/python
+
+import re
+
+# used to import modules
+import os
+import sys #used also to get params for the python script
+import MySQLdb
+import datetime
+
+class croner:
+
+    # params : release       : String
+    #          instances      : String
+    #          role          : Int
+    def __init__(self, release, instance, role, defined_roles, logger, cron_file, section_name):
+        self.release=release
+        self.instance=instance
+        self.role=role
+        self.defined_roles=defined_roles
+        self.logger = logger
+        self.cron_file = cron_file
+        self.section_begin = '#'+section_name+'-begin'
+        self.section_end = '#'+section_name+'-end'
+
+    def refreshCrontab(self):
+        # create regular expression pattern
+        pat = self.section_begin+'.*?'+self.section_end
+        
+        print pat
+        chop = re.compile(pat, re.DOTALL)
+
+        # open file
+        f = open(self.cron_file, 'r')
+        data = f.read()
+        f.close()
+
+        # chop text between #chop-begin and #chop-end
+        data_chopped = chop.sub('', data)
+
+        # save result
+        f = open(self.cron_file, 'w')
+        f.write(data_chopped)
+        f.close()
+
+    def fillJobs(self, jobs):
+        # save result
+        f = open(self.cron_file, 'a')
+        f.write(self.section_begin+"\n")
+        for i in range(0,len(jobs)):
+            #every event will have 2 entries or jobs one with the role 5 and the other with the role 10
+            f.write(jobs[i]+"\n")
+        f.write(self.section_end)
+        f.close()
+    def getJobs(self):
+        now = datetime.datetime.now()
+        jobs_array = []
+        db = MySQLdb.connect(host="10.157.15.161",    # your host, usually localhost
+                     user="2AU",         # your username
+                     passwd="password",  # your password
+                     db="2AU")        # name of the data base
+
+        # you must create a Cursor object. It will let
+        #  you execute all the queries you need
+        cur = db.cursor()
+
+        # Use all the SQL you like
+        cur.execute("SELECT * FROM evenement")
+
+        # print all the first cell of all the rows
+        for row in cur.fetchall():
+            if now <= row[2]:
+                jobs_array.append("0 9 "+str(row[2].day)+" "+str(row[2].month)+" * /root/2AU_python_script/2AU.py "+'"9.0"'+" "+str(row[4])+" "+"raf.yml"+" 5")
+                jobs_array.append("0 9 "+str(row[2].day-3)+" "+str(row[2].month)+" * /root/2AU_python_script/2AU.py "+'"9.0"'+" "+str(row[4])+" NULL 10")
+        db.close()
+        print jobs_array
+        return jobs_array
+
+#************************************main****************************************
+cron = croner("9", "codex", "8", "12", "logger", "/var/spool/cron/root", "2AU")
+cron.refreshCrontab()
+cron.fillJobs(cron.getJobs())
+
+
+#This script will be launched everyday : it will read the db content and append the corresponding jobs to 
+
+#python 2AU.py 'codex 9.0' codex-test.cro.st.com,127.0.0.1 raf.yml,test.yml 8
+

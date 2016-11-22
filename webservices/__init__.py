@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # ------------------------------------------------------------------------------
-# ------------------------------------------------- PAQUETAGE playbook -----------
+# ------------------------------------------------- croner -----------
 # ------------------------------------------------------------------------------
 ##
-# @package sendMail
+# @package croner
 # @brief Ce paquetage contient tous les objets de type objet_, c'est-à-dire les objets mathématiques.
 
-import sendMail
+import webservices
 
-sendMail = sendMail.sendMail
+webservices = webservices.webservices

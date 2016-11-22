@@ -1,0 +1,29 @@
+===TO
+default
+TO===
+===SUBJECT
+=upgradeInstance= running tuleap_=release=
+SUBJECT===
+
+===BODY
+<table style='width:100.0%;background:#57a2ed;'>
+   <tr>
+      <td style='background:#b7dbff;'>
+         <div style='font-size:10pt;font-family:"Tahoma",sans-serif'>
+            Bonjour,
+         </div>
+         <br>
+         <div style='font-size:8.5pt;font-family:"Tahoma",sans-serif'>
+            =upgradeInstance= est mis à jour a la version =release=.
+         </div>
+         <br>
+         <div style='font-size:10pt;font-family:"Tahoma",sans-serif'>
+            Cordialement,<br>
+            Codex Team.
+         </div>
+      </td>
+   </tr>
+</table>
+BODY===
+Cordialement,
+Fares.

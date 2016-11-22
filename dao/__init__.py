@@ -6,6 +6,6 @@
 # @package sendMail
 # @brief Ce paquetage contient tous les objets de type objet_, c'est-à-dire les objets mathématiques.
 
-import sendMail
+import dao
 
-sendMail = sendMail.sendMail
+dao = dao.dao

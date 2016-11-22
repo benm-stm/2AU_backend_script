@@ -1,0 +1,1691 @@
+
+2016-11-07 16:40:36,869 2AU ---- logger init ----
+2016-11-07 16:40:36,870 2AU selected roles : [1]
+2016-11-07 17:06:43,211 2AU ---- logger init ----
+2016-11-07 17:08:14,208 2AU ---- logger init ----
+2016-11-07 17:09:00,440 2AU ---- logger init ----
+2016-11-07 17:09:02,567 2AU ---- logger init ----
+2016-11-07 17:09:49,699 2AU ---- logger init ----
+2016-11-07 17:10:30,082 2AU ---- logger init ----
+2016-11-07 17:10:54,942 2AU ---- logger init ----
+2016-11-07 17:11:17,696 2AU ---- logger init ----
+2016-11-07 17:14:11,261 2AU ---- logger init ----
+2016-11-07 17:15:44,332 2AU ---- logger init ----
+2016-11-07 17:16:18,116 2AU ---- logger init ----
+2016-11-07 17:16:18,117 2AU selected roles : [1]
+2016-11-07 17:17:18,007 2AU ---- logger init ----
+2016-11-07 17:17:18,009 2AU selected roles : [1]
+2016-11-07 17:17:19,841 2AU ---- logger init ----
+2016-11-07 17:17:19,843 2AU selected roles : [1]
+2016-11-07 17:17:34,598 2AU ---- logger init ----
+2016-11-07 17:17:34,600 2AU selected roles : [1]
+2016-11-07 17:17:36,481 2AU ---- logger init ----
+2016-11-07 17:17:36,482 2AU selected roles : [1]
+2016-11-07 17:17:46,849 2AU ---- logger init ----
+2016-11-07 17:17:46,850 2AU selected roles : [1]
+2016-11-08 09:22:27,393 2AU ---- logger init ----
+2016-11-08 09:22:27,395 2AU selected roles : [1]
+2016-11-08 09:23:02,256 2AU ---- logger init ----
+2016-11-08 09:23:02,258 2AU selected roles : [1]
+2016-11-08 09:26:51,787 2AU ---- logger init ----
+2016-11-08 09:26:51,788 2AU selected roles : [1]
+2016-11-08 09:27:11,777 2AU ---- logger init ----
+2016-11-08 09:27:11,778 2AU selected roles : [1]
+2016-11-08 09:27:24,641 2AU ---- logger init ----
+2016-11-08 09:27:24,642 2AU selected roles : [1]
+2016-11-08 09:30:08,142 2AU ---- logger init ----
+2016-11-08 09:30:08,143 2AU selected roles : [1]
+2016-11-08 09:30:14,920 2AU ---- logger init ----
+2016-11-08 09:30:14,921 2AU selected roles : [1]
+2016-11-08 09:30:15,652 p=8624 u=root |  PLAY [all] *********************************************************************
+2016-11-08 09:30:15,794 p=8624 u=root |   [WARNING]: The variable 'environment' appears to be used already, which is also used internally for environment variables set on the task/block/play. You should use a different variable name to avoid conflicts with this internal variable
+
+2016-11-08 09:30:15,795 p=8624 u=root |  TASK [setup] *******************************************************************
+2016-11-08 09:30:17,129 p=8624 u=root |  fatal: [codex-test.cro.st.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-11-08 09:30:18,220 p=8624 u=root |  ok: [127.0.0.1]
+2016-11-08 09:30:18,287 p=8624 u=root |  TASK [Add TuleapDirect repository] *********************************************
+2016-11-08 09:30:18,994 p=8624 u=root |  ok: [127.0.0.1]
+2016-11-08 09:30:19,006 p=8624 u=root |  TASK [create  /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64 if it doesn't exist] ***
+2016-11-08 09:30:19,600 p=8624 u=root |  ok: [127.0.0.1]
+2016-11-08 09:30:19,610 p=8624 u=root |  TASK [create Backup folder /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/backup if it doesn't exist] ***
+2016-11-08 09:30:20,093 p=8624 u=root |  ok: [127.0.0.1]
+2016-11-08 09:30:20,101 p=8624 u=root |  TASK [Backup old rpms] *********************************************************
+2016-11-08 09:31:04,675 p=8624 u=root |  changed: [127.0.0.1]
+2016-11-08 09:31:04,696 p=8624 u=root |  TASK [Download rpms under /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64] ***
+2016-11-08 09:31:16,967 p=8624 u=root |  fatal: [127.0.0.1]: FAILED! => {"changed": true, "cmd": ["yum", "update", "tuleap*", "-y", "--enablerepo=TuleapDirect", "--enablerepo=epel", "--downloadonly", "--downloaddir=/var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64"], "delta": "0:00:11.328756", "end": "2016-11-08 09:31:16.904741", "failed": true, "rc": 1, "start": "2016-11-08 09:31:05.575985", "stderr": "https://terzino:test123@tuleap.net/file/pub/tuleap/yum/tuleap/rhel/6/stable/x86_64/repodata/repomd.xml: [Errno 14] PYCURL ERROR 22 - \"HTTP response code said error\"\nTrying other mirror.\nError: Cannot retrieve repository metadata (repomd.xml) for repository: TuleapDirect. Please verify its path and try again", "stdout": "Loaded plugins: fastestmirror, refresh-packagekit, security\nSetting up Update Process\nLoading mirror speeds from cached hostfile\nCould not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=x86_64 error was\n14: PYCURL ERROR 22 - \"HTTP response code said error\"\nCould not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-source-6&arch=x86_64 error was\n14: PYCURL ERROR 22 - \"HTTP response code said error\"\n * base: centosmirror.netcup.net\n * epel: epel.besthosting.ua\n * epel-source: epel.besthosting.ua\n * extras: centos.mirror.net-d-sign.de\n * rpmforge: apt.sw.be\n * rpmforge-extras: apt.sw.be\n * updates: centosmirror.netcup.net", "stdout_lines": ["Loaded plugins: fastestmirror, refresh-packagekit, security", "Setting up Update Process", "Loading mirror speeds from cached hostfile", "Could not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=x86_64 error was", "14: PYCURL ERROR 22 - \"HTTP response code said error\"", "Could not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-source-6&arch=x86_64 error was", "14: PYCURL ERROR 22 - \"HTTP response code said error\"", " * base: centosmirror.netcup.net", " * epel: epel.besthosting.ua", " * epel-source: epel.besthosting.ua", " * extras: centos.mirror.net-d-sign.de", " * rpmforge: apt.sw.be", " * rpmforge-extras: apt.sw.be", " * updates: centosmirror.netcup.net"], "warnings": ["Consider using yum module rather than running yum"]}
+2016-11-08 09:31:16,974 p=8624 u=root |  NO MORE HOSTS LEFT *************************************************************
+2016-11-08 09:31:16,981 p=8624 u=root |  	to retry, use: --limit @/root/2AU_python_script/playbook/playbooks/raf.retry
+
+2016-11-08 09:31:16,981 p=8624 u=root |  PLAY RECAP *********************************************************************
+2016-11-08 09:31:16,982 p=8624 u=root |  127.0.0.1                  : ok=5    changed=1    unreachable=0    failed=1   
+2016-11-08 09:31:16,982 p=8624 u=root |  codex-test.cro.st.com      : ok=0    changed=0    unreachable=1    failed=0   
+2016-11-08 09:32:53,559 2AU ---- logger init ----
+2016-11-08 09:32:53,562 2AU selected roles : [1]
+2016-11-08 09:33:35,912 2AU ---- logger init ----
+2016-11-08 09:33:35,912 2AU /root/2AU_python_script/playbook/playbooks/f does not exist
+2016-11-10 14:51:56,898 2AU ---- logger init ----
+2016-11-10 14:51:56,901 2AU selected roles : [1]
+2016-11-10 14:51:57,761 p=18696 u=root |  PLAY [all] *********************************************************************
+2016-11-10 14:51:57,937 p=18696 u=root |   [WARNING]: The variable 'environment' appears to be used already, which is also used internally for environment variables set on the task/block/play. You should use a different variable name to avoid conflicts with this internal variable
+
+2016-11-10 14:51:57,939 p=18696 u=root |  TASK [setup] *******************************************************************
+2016-11-10 14:51:58,453 p=18696 u=root |  fatal: [127.0.0.1]: FAILED! => {"failed": true, "msg": "failure writing module data to temporary file for transfer: [Errno 28] No space left on device"}
+2016-11-10 14:51:59,440 p=18696 u=root |  fatal: [codex-test.cro.st.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-11-10 14:51:59,446 p=18696 u=root |  NO MORE HOSTS LEFT *************************************************************
+2016-11-10 14:51:59,477 p=18696 u=root |   [WARNING]: Could not create retry file '/root/2AU_python_script/playbook/playbooks/raf.retry'.         [Errno 28] No space left on device
+
+2016-11-10 14:51:59,477 p=18696 u=root |  PLAY RECAP *********************************************************************
+2016-11-10 14:51:59,478 p=18696 u=root |  127.0.0.1                  : ok=0    changed=0    unreachable=0    failed=2016-11-10 14:56:41,032 2AU ---- logger init ----
+2016-11-10 14:56:41,038 2AU selected roles : [1]
+2016-11-10 14:56:41,111 p=18988 u=root |  PLAY [all] *********************************************************************
+2016-11-10 14:56:41,142 p=18988 u=root |   [WARNING]: The variable 'environment' appears to be used already, which is also used internally for environment variables set on the task/block/play. You should use a different variable name to avoid conflicts with this internal variable
+
+2016-11-10 14:56:41,142 p=18988 u=root |  TASK [setup] *******************************************************************
+2016-11-10 14:56:41,534 p=18988 u=root |  fatal: [127.0.0.1]: FAILED! => {"failed": true, "msg": "failed to transfer file to /root/.ansible/tmp/ansible-tmp-1478786201.39-264984990819583/setup:\nsftp> put /tmp/tmpE7hRkU /root/.ansible/tmp/ansible-tmp-1478786201.39-264984990819583/setup\nUploading /tmp/tmpE7hRkU to /root/.ansible/tmp/ansible-tmp-1478786201.39-264984990819583/setup\n\nCouldn't write to remote file \"/root/.ansible/tmp/ansible-tmp-1478786201.39-264984990819583/setup\": Failure\r\n"}
+2016-11-10 14:56:41,868 p=18988 u=root |  fatal: [codex-test.cro.st.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-11-10 14:56:41,874 p=18988 u=root |  NO MORE HOSTS LEFT *************************************************************
+2016-11-10 14:56:41,877 p=18988 u=root |  	to retry, use: --limit @/root/2AU_python_script/playbook/playbooks/raf.retry
+
+2016-11-10 14:56:41,877 p=18988 u=root |  PLAY RECAP *********************************************************************
+2016-11-10 14:56:41,878 p=18988 u=root |  127.0.0.1                  : ok=0    changed=0    unreachable=0    failed=1   
+2016-11-10 14:56:41,878 p=18988 u=root |  codex-test.cro.st.com      : ok=0    changed=0    unreachable=1    failed=0   
+2016-11-10 14:57:25,015 2AU ---- logger init ----
+2016-11-10 14:57:25,016 2AU selected roles : [1]
+2016-11-10 14:57:25,092 p=19077 u=root |  PLAY [all] *********************************************************************
+2016-11-10 14:57:25,126 p=19077 u=root |   [WARNING]: The variable 'environment' appears to be used already, which is also used internally for environment variables set on the task/block/play. You should use a different variable name to avoid conflicts with this internal variable
+
+2016-11-10 14:57:25,127 p=19077 u=root |  TASK [setup] *******************************************************************
+2016-11-10 14:57:25,860 p=19077 u=root |  fatal: [codex-test.cro.st.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-11-10 14:57:26,953 p=19077 u=root |  ok: [127.0.0.1]
+2016-11-10 14:57:27,094 p=19077 u=root |  TASK [Add TuleapDirect repository] *********************************************
+2016-11-10 14:57:27,746 p=19077 u=root |  ok: [127.0.0.1]
+2016-11-10 14:57:27,758 p=19077 u=root |  TASK [create  /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64 if it doesn't exist] ***
+2016-11-10 14:57:28,331 p=19077 u=root |  ok: [127.0.0.1]
+2016-11-10 14:57:28,344 p=19077 u=root |  TASK [create Backup folder /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/backup if it doesn't exist] ***
+2016-11-10 14:57:28,833 p=19077 u=root |  ok: [127.0.0.1]
+2016-11-10 14:57:28,841 p=19077 u=root |  TASK [Backup old rpms] *********************************************************
+2016-11-10 14:58:08,192 p=19077 u=root |  changed: [127.0.0.1]
+2016-11-10 14:58:08,212 p=19077 u=root |  TASK [Download rpms under /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64] ***
+2016-11-10 14:58:22,480 p=19077 u=root |  fatal: [127.0.0.1]: FAILED! => {"changed": true, "cmd": ["yum", "update", "tuleap*", "-y", "--enablerepo=TuleapDirect", "--enablerepo=epel", "--downloadonly", "--downloaddir=/var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64"], "delta": "0:00:12.922402", "end": "2016-11-10 14:58:22.412204", "failed": true, "rc": 1, "start": "2016-11-10 14:58:09.489802", "stderr": "https://terzino:test123@tuleap.net/file/pub/tuleap/yum/tuleap/rhel/6/stable/x86_64/repodata/repomd.xml: [Errno 14] PYCURL ERROR 22 - \"HTTP response code said error\"\nTrying other mirror.\nError: Cannot retrieve repository metadata (repomd.xml) for repository: TuleapDirect. Please verify its path and try again", "stdout": "Loaded plugins: fastestmirror, refresh-packagekit, security\nSetting up Update Process\nLoading mirror speeds from cached hostfile\nCould not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os&infra=stock error was\n14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"\nCould not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=x86_64 error was\n14: PYCURL ERROR 22 - \"HTTP response code said error\"\nCould not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-source-6&arch=x86_64 error was\n14: PYCURL ERROR 22 - \"HTTP response code said error\"\nCould not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=extras&infra=stock error was\n14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"\nCould not retrieve mirrorlist http://mirrorlist.repoforge.org/el6/mirrors-rpmforge error was\n14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"\nCould not retrieve mirrorlist http://mirrorlist.repoforge.org/el6/mirrors-rpmforge-extras error was\n14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"\nCould not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates&infra=stock error was\n14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"\n * base: centosmirror.netcup.net\n * epel: epel.besthosting.ua\n * epel-source: epel.besthosting.ua\n * extras: centos.mirror.net-d-sign.de\n * rpmforge: apt.sw.be\n * rpmforge-extras: apt.sw.be\n * updates: centosmirror.netcup.net", "stdout_lines": ["Loaded plugins: fastestmirror, refresh-packagekit, security", "Setting up Update Process", "Loading mirror speeds from cached hostfile", "Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os&infra=stock error was", "14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"", "Could not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=x86_64 error was", "14: PYCURL ERROR 22 - \"HTTP response code said error\"", "Could not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-source-6&arch=x86_64 error was", "14: PYCURL ERROR 22 - \"HTTP response code said error\"", "Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=extras&infra=stock error was", "14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"", "Could not retrieve mirrorlist http://mirrorlist.repoforge.org/el6/mirrors-rpmforge error was", "14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"", "Could not retrieve mirrorlist http://mirrorlist.repoforge.org/el6/mirrors-rpmforge-extras error was", "14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"", "Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates&infra=stock error was", "14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"", " * base: centosmirror.netcup.net", " * epel: epel.besthosting.ua", " * epel-source: epel.besthosting.ua", " * extras: centos.mirror.net-d-sign.de", " * rpmforge: apt.sw.be", " * rpmforge-extras: apt.sw.be", " * updates: centosmirror.netcup.net"], "warnings": ["Consider using yum module rather than running yum"]}
+2016-11-10 14:58:22,488 p=19077 u=root |  NO MORE HOSTS LEFT *************************************************************
+2016-11-10 14:58:22,500 p=19077 u=root |  	to retry, use: --limit @/root/2AU_python_script/playbook/playbooks/raf.retry
+
+2016-11-10 14:58:22,500 p=19077 u=root |  PLAY RECAP *********************************************************************
+2016-11-10 14:58:22,500 p=19077 u=root |  127.0.0.1                  : ok=5    changed=1    unreachable=0    failed=1   
+2016-11-10 14:58:22,501 p=19077 u=root |  codex-test.cro.st.com      : ok=0    changed=0    unreachable=1    failed=0   
+2016-11-10 15:22:24,180 2AU ---- logger init ----
+2016-11-10 15:22:24,185 2AU selected roles : [1]
+2016-11-10 15:22:55,962 2AU ---- logger init ----
+2016-11-10 15:22:55,964 2AU selected roles : [1]
+2016-11-10 15:27:26,991 2AU ---- logger init ----
+2016-11-10 15:27:26,993 2AU selected roles : [1]
+2016-11-10 16:32:39,531 2AU ---- logger init ----
+2016-11-10 16:32:49,378 2AU ---- logger init ----
+2016-11-10 16:33:34,760 2AU ---- logger init ----
+2016-11-10 16:33:34,761 2AU selected roles : [8]
+2016-11-10 16:33:51,879 2AU ---- logger init ----
+2016-11-10 16:33:51,881 2AU selected roles : [8]
+2016-11-10 16:34:24,013 2AU ---- logger init ----
+2016-11-10 16:34:24,015 2AU selected roles : [8]
+2016-11-10 16:34:26,489 2AU ---- logger init ----
+2016-11-10 16:34:26,490 2AU selected roles : [8]
+2016-11-10 16:37:06,151 2AU ---- logger init ----
+2016-11-10 16:37:06,153 2AU selected roles : [8]
+2016-11-10 16:37:53,908 2AU ---- logger init ----
+2016-11-10 16:37:53,909 2AU selected roles : [8]
+2016-11-10 16:38:29,757 2AU ---- logger init ----
+2016-11-10 16:38:29,758 2AU selected roles : [8]
+2016-11-10 16:38:31,550 2AU ---- logger init ----
+2016-11-10 16:38:31,551 2AU selected roles : [8]
+2016-11-10 16:39:47,428 2AU ---- logger init ----
+2016-11-10 16:39:47,430 2AU selected roles : [8]
+2016-11-10 16:39:49,140 2AU ---- logger init ----
+2016-11-10 16:39:49,141 2AU selected roles : [8]
+2016-11-10 16:39:59,528 2AU ---- logger init ----
+2016-11-10 16:39:59,530 2AU selected roles : [8]
+2016-11-10 16:40:01,274 2AU ---- logger init ----
+2016-11-10 16:40:01,276 2AU selected roles : [8]
+2016-11-10 16:40:25,784 2AU ---- logger init ----
+2016-11-10 16:40:25,785 2AU selected roles : [8]
+2016-11-10 16:40:27,634 2AU ---- logger init ----
+2016-11-10 16:40:27,635 2AU selected roles : [8]
+2016-11-10 16:41:28,263 2AU ---- logger init ----
+2016-11-10 16:41:28,264 2AU selected roles : [8]
+2016-11-10 16:41:46,533 2AU ---- logger init ----
+2016-11-10 16:41:46,535 2AU selected roles : [8]
+2016-11-10 16:43:20,055 2AU ---- logger init ----
+2016-11-10 16:43:20,057 2AU selected roles : [8]
+2016-11-10 16:43:22,028 2AU ---- logger init ----
+2016-11-10 16:43:22,030 2AU selected roles : [8]
+2016-11-10 16:43:33,133 2AU ---- logger init ----
+2016-11-10 16:43:33,135 2AU selected roles : [8]
+2016-11-10 16:44:11,516 2AU ---- logger init ----
+2016-11-10 16:44:11,518 2AU selected roles : [8]
+2016-11-10 16:44:35,653 2AU ---- logger init ----
+2016-11-10 16:44:35,655 2AU selected roles : [8]
+2016-11-10 16:44:57,811 2AU ---- logger init ----
+2016-11-10 16:44:57,813 2AU selected roles : [8]
+2016-11-10 16:45:08,985 2AU ---- logger init ----
+2016-11-10 16:45:08,987 2AU selected roles : [8]
+2016-11-10 16:45:10,747 2AU ---- logger init ----
+2016-11-10 16:45:10,748 2AU selected roles : [8]
+2016-11-10 16:46:55,431 2AU ---- logger init ----
+2016-11-10 16:46:55,433 2AU selected roles : [8]
+2016-11-10 16:47:58,815 2AU ---- logger init ----
+2016-11-10 16:47:58,817 2AU selected roles : [8]
+2016-11-10 16:47:59,257 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-10 16:48:22,799 2AU ---- logger init ----
+2016-11-10 16:48:22,800 2AU selected roles : [8]
+2016-11-10 16:48:23,119 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-10 16:50:55,158 2AU ---- logger init ----
+2016-11-10 16:50:55,160 2AU selected roles : [4]
+2016-11-10 16:50:55,532 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-10 16:53:49,228 2AU ---- logger init ----
+2016-11-10 16:53:49,229 2AU selected roles : [4]
+2016-11-10 16:55:37,582 2AU ---- logger init ----
+2016-11-10 16:55:37,583 2AU selected roles : [4]
+2016-11-10 16:55:38,221 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-10 16:57:18,545 2AU ---- logger init ----
+2016-11-10 16:57:18,547 2AU selected roles : [4]
+2016-11-10 16:57:19,055 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-10 16:58:02,946 2AU ---- logger init ----
+2016-11-10 16:58:02,948 2AU selected roles : [4]
+2016-11-10 16:58:03,306 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-10 16:58:08,096 2AU ---- logger init ----
+2016-11-10 16:58:08,098 2AU selected roles : [4]
+2016-11-10 16:58:08,628 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-10 16:59:35,462 2AU ---- logger init ----
+2016-11-10 16:59:35,463 2AU selected roles : [4]
+2016-11-10 16:59:35,932 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-10 17:02:29,107 2AU ---- logger init ----
+2016-11-10 17:02:29,109 2AU selected roles : [4, 1]
+2016-11-10 17:02:29,658 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-10 17:02:30,612 p=9543 u=root |  PLAY [all] *********************************************************************
+2016-11-10 17:02:30,748 p=9543 u=root |   [WARNING]: The variable 'environment' appears to be used already, which is also used internally for environment variables set on the task/block/play. You should use a different variable name to avoid conflicts with this internal variable
+
+2016-11-10 17:02:30,750 p=9543 u=root |  TASK [setup] *******************************************************************
+2016-11-10 17:02:31,990 p=9543 u=root |  fatal: [codex-test.cro.st.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-11-10 17:02:33,763 p=9543 u=root |  ok: [127.0.0.1]
+2016-11-10 17:02:33,849 p=9543 u=root |  TASK [Add TuleapDirect repository] *********************************************
+2016-11-10 17:02:34,559 p=9543 u=root |  ok: [127.0.0.1]
+2016-11-10 17:02:34,571 p=9543 u=root |  TASK [create  /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64 if it doesn't exist] ***
+2016-11-10 17:02:35,174 p=9543 u=root |  ok: [127.0.0.1]
+2016-11-10 17:02:35,184 p=9543 u=root |  TASK [create Backup folder /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/backup if it doesn't exist] ***
+2016-11-10 17:02:35,684 p=9543 u=root |  ok: [127.0.0.1]
+2016-11-10 17:02:35,692 p=9543 u=root |  TASK [Backup old rpms] *********************************************************
+2016-11-10 17:02:48,122 2AU ---- logger init ----
+2016-11-10 17:02:48,125 2AU selected roles : [8, 4]
+2016-11-10 17:02:48,511 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-10 17:02:49,022 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:34:19,194 2AU ---- logger init ----
+2016-11-11 09:34:19,197 2AU selected roles : [8, 4]
+2016-11-11 09:34:19,709 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:34:20,071 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:37:57,967 2AU ---- logger init ----
+2016-11-11 09:37:57,969 2AU selected roles : [8, 4]
+2016-11-11 09:37:58,302 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:37:58,751 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:48:50,467 2AU ---- logger init ----
+2016-11-11 09:48:50,469 2AU selected roles : [8, 4]
+2016-11-11 09:48:58,469 2AU ---- logger init ----
+2016-11-11 09:48:58,471 2AU selected roles : [8, 4]
+2016-11-11 09:49:32,099 2AU ---- logger init ----
+2016-11-11 09:49:32,101 2AU selected roles : [8, 4]
+2016-11-11 09:49:52,701 2AU ---- logger init ----
+2016-11-11 09:49:52,702 2AU selected roles : [8, 4]
+2016-11-11 09:50:29,333 2AU ---- logger init ----
+2016-11-11 09:50:29,334 2AU selected roles : [8, 4]
+2016-11-11 09:51:12,113 2AU ---- logger init ----
+2016-11-11 09:51:12,114 2AU selected roles : [8, 4]
+2016-11-11 09:51:12,672 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:51:13,082 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:52:52,113 2AU ---- logger init ----
+2016-11-11 09:52:52,114 2AU selected roles : [8, 4]
+2016-11-11 09:52:52,464 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:52:52,820 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:52:59,289 2AU ---- logger init ----
+2016-11-11 09:52:59,290 2AU selected roles : [8, 4]
+2016-11-11 09:52:59,607 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:53:00,260 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:53:07,710 2AU ---- logger init ----
+2016-11-11 09:53:07,711 2AU selected roles : [8, 4]
+2016-11-11 09:53:08,082 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 09:53:08,499 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:08:49,282 2AU ---- logger init ----
+2016-11-11 10:08:49,284 2AU selected roles : [8, 4]
+2016-11-11 10:08:51,492 2AU ---- logger init ----
+2016-11-11 10:08:51,493 2AU selected roles : [8, 4]
+2016-11-11 10:11:00,666 2AU ---- logger init ----
+2016-11-11 10:11:00,667 2AU selected roles : [8, 4]
+2016-11-11 10:11:01,077 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:11:01,481 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:11:49,143 2AU ---- logger init ----
+2016-11-11 10:11:49,144 2AU selected roles : [8, 4]
+2016-11-11 10:11:58,672 2AU ---- logger init ----
+2016-11-11 10:11:58,673 2AU selected roles : [8, 4]
+2016-11-11 10:12:00,636 2AU ---- logger init ----
+2016-11-11 10:12:00,638 2AU selected roles : [8, 4]
+2016-11-11 10:13:51,933 2AU ---- logger init ----
+2016-11-11 10:13:51,935 2AU selected roles : [8, 4]
+2016-11-11 10:14:00,927 2AU ---- logger init ----
+2016-11-11 10:14:00,928 2AU selected roles : [8, 4]
+2016-11-11 10:14:27,498 2AU ---- logger init ----
+2016-11-11 10:14:27,499 2AU selected roles : [8, 4]
+2016-11-11 10:14:29,426 2AU ---- logger init ----
+2016-11-11 10:14:29,427 2AU selected roles : [8, 4]
+2016-11-11 10:14:53,233 2AU ---- logger init ----
+2016-11-11 10:14:53,235 2AU selected roles : [8, 4]
+2016-11-11 10:15:11,468 2AU ---- logger init ----
+2016-11-11 10:15:11,473 2AU selected roles : [8, 4]
+2016-11-11 10:15:11,797 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:15:12,191 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:15:38,774 2AU ---- logger init ----
+2016-11-11 10:15:38,776 2AU selected roles : [8, 4]
+2016-11-11 10:16:25,122 2AU ---- logger init ----
+2016-11-11 10:16:25,123 2AU selected roles : [8, 4]
+2016-11-11 10:17:06,189 2AU ---- logger init ----
+2016-11-11 10:17:06,191 2AU selected roles : [8, 4]
+2016-11-11 10:17:09,777 2AU ---- logger init ----
+2016-11-11 10:17:09,778 2AU selected roles : [8, 4]
+2016-11-11 10:17:32,929 2AU ---- logger init ----
+2016-11-11 10:17:32,930 2AU selected roles : [8, 4]
+2016-11-11 10:17:34,807 2AU ---- logger init ----
+2016-11-11 10:17:34,808 2AU selected roles : [8, 4]
+2016-11-11 10:17:45,169 2AU ---- logger init ----
+2016-11-11 10:17:45,170 2AU selected roles : [8, 4]
+2016-11-11 10:18:06,295 2AU ---- logger init ----
+2016-11-11 10:18:06,297 2AU selected roles : [8, 4]
+2016-11-11 10:18:08,056 2AU ---- logger init ----
+2016-11-11 10:18:08,058 2AU selected roles : [8, 4]
+2016-11-11 10:18:44,302 2AU ---- logger init ----
+2016-11-11 10:18:44,304 2AU selected roles : [8, 4]
+2016-11-11 10:18:46,431 2AU ---- logger init ----
+2016-11-11 10:18:46,433 2AU selected roles : [8, 4]
+2016-11-11 10:18:53,178 2AU ---- logger init ----
+2016-11-11 10:18:53,179 2AU selected roles : [8, 4]
+2016-11-11 10:18:55,423 2AU ---- logger init ----
+2016-11-11 10:18:55,424 2AU selected roles : [8, 4]
+2016-11-11 10:19:05,780 2AU ---- logger init ----
+2016-11-11 10:19:05,781 2AU selected roles : [8, 4]
+2016-11-11 10:19:54,783 2AU ---- logger init ----
+2016-11-11 10:19:54,784 2AU selected roles : [8, 4]
+2016-11-11 10:19:55,320 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:19:55,767 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:20:03,942 2AU ---- logger init ----
+2016-11-11 10:20:03,950 2AU selected roles : [4]
+2016-11-11 10:20:04,295 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:21:03,165 2AU ---- logger init ----
+2016-11-11 10:21:03,166 2AU selected roles : [4]
+2016-11-11 10:21:03,560 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:21:05,665 2AU ---- logger init ----
+2016-11-11 10:21:05,667 2AU selected roles : [4]
+2016-11-11 10:21:06,054 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:21:08,402 2AU ---- logger init ----
+2016-11-11 10:21:08,404 2AU selected roles : [8, 4]
+2016-11-11 10:21:08,809 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:21:09,197 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:23:13,909 2AU ---- logger init ----
+2016-11-11 10:23:13,911 2AU selected roles : [4]
+2016-11-11 10:23:14,270 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:24:53,958 2AU ---- logger init ----
+2016-11-11 10:24:53,959 2AU selected roles : [4]
+2016-11-11 10:24:54,416 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:26:44,333 2AU ---- logger init ----
+2016-11-11 10:26:44,334 2AU selected roles : [4]
+2016-11-11 10:26:44,677 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:26:46,759 2AU ---- logger init ----
+2016-11-11 10:26:46,760 2AU selected roles : [4]
+2016-11-11 10:26:47,111 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 10:36:54,959 2AU ---- logger init ----
+2016-11-11 10:36:54,960 2AU selected roles : [4]
+2016-11-11 10:36:55,279 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:37:56,138 2AU ---- logger init ----
+2016-11-11 11:37:56,140 2AU selected roles : [4]
+2016-11-11 11:37:56,599 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:38:09,999 2AU ---- logger init ----
+2016-11-11 11:38:10,000 2AU selected roles : [4]
+2016-11-11 11:38:10,357 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:39:11,254 2AU ---- logger init ----
+2016-11-11 11:39:11,255 2AU selected roles : [4]
+2016-11-11 11:39:13,239 2AU ---- logger init ----
+2016-11-11 11:39:13,241 2AU selected roles : [4]
+2016-11-11 11:39:27,880 2AU ---- logger init ----
+2016-11-11 11:39:27,881 2AU selected roles : [4]
+2016-11-11 11:39:33,634 2AU ---- logger init ----
+2016-11-11 11:39:33,635 2AU selected roles : [4]
+2016-11-11 11:39:33,994 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:40:25,740 2AU ---- logger init ----
+2016-11-11 11:40:25,744 2AU selected roles : [4]
+2016-11-11 11:40:26,100 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:40:28,095 2AU ---- logger init ----
+2016-11-11 11:40:28,096 2AU selected roles : [4]
+2016-11-11 11:40:28,405 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:41:03,976 2AU ---- logger init ----
+2016-11-11 11:41:03,977 2AU selected roles : [4]
+2016-11-11 11:41:04,339 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:41:25,352 2AU ---- logger init ----
+2016-11-11 11:41:25,354 2AU selected roles : [4]
+2016-11-11 11:41:25,711 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:42:04,617 2AU ---- logger init ----
+2016-11-11 11:42:04,618 2AU selected roles : [4]
+2016-11-11 11:42:04,976 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:42:15,120 2AU ---- logger init ----
+2016-11-11 11:42:15,122 2AU selected roles : [4]
+2016-11-11 11:42:15,476 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:42:56,850 2AU ---- logger init ----
+2016-11-11 11:42:56,851 2AU selected roles : [4]
+2016-11-11 11:42:57,207 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:43:09,899 2AU ---- logger init ----
+2016-11-11 11:43:09,901 2AU selected roles : [4]
+2016-11-11 11:43:10,218 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:44:24,888 2AU ---- logger init ----
+2016-11-11 11:44:24,890 2AU selected roles : [4]
+2016-11-11 11:44:25,203 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:49:55,881 2AU ---- logger init ----
+2016-11-11 11:49:55,882 2AU selected roles : [4]
+2016-11-11 11:49:56,354 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:50:17,010 2AU ---- logger init ----
+2016-11-11 11:50:17,011 2AU selected roles : [4]
+2016-11-11 11:50:17,328 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:50:29,775 2AU ---- logger init ----
+2016-11-11 11:50:29,776 2AU selected roles : [4]
+2016-11-11 11:50:30,133 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 11:59:34,785 2AU ---- logger init ----
+2016-11-11 11:59:34,787 2AU selected roles : [4]
+2016-11-11 12:00:00,528 2AU ---- logger init ----
+2016-11-11 12:00:00,529 2AU selected roles : [4]
+2016-11-11 12:00:00,529 2AU section name section_name does not exist
+2016-11-11 12:00:00,530 2AU section name section_name does not exist
+2016-11-11 12:00:00,995 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:00:55,935 2AU ---- logger init ----
+2016-11-11 12:00:55,937 2AU selected roles : [4]
+2016-11-11 12:00:55,937 2AU section name section_name does not exist
+2016-11-11 12:00:55,937 2AU section name section_name does not exist
+2016-11-11 12:00:56,303 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:03:14,425 2AU ---- logger init ----
+2016-11-11 12:03:14,427 2AU selected roles : [4]
+2016-11-11 12:03:17,699 2AU ---- logger init ----
+2016-11-11 12:03:17,700 2AU selected roles : [4]
+2016-11-11 12:04:26,076 2AU ---- logger init ----
+2016-11-11 12:04:26,078 2AU selected roles : [4]
+2016-11-11 12:05:33,533 2AU ---- logger init ----
+2016-11-11 12:05:33,535 2AU selected roles : [4]
+2016-11-11 12:05:35,564 2AU ---- logger init ----
+2016-11-11 12:05:35,566 2AU selected roles : [4]
+2016-11-11 12:07:44,962 2AU ---- logger init ----
+2016-11-11 12:07:44,963 2AU selected roles : [4]
+2016-11-11 12:07:44,964 2AU section name section_name does not exist
+2016-11-11 12:07:45,413 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:07:54,561 2AU ---- logger init ----
+2016-11-11 12:07:54,562 2AU selected roles : [4]
+2016-11-11 12:08:35,840 2AU ---- logger init ----
+2016-11-11 12:08:35,841 2AU selected roles : [4]
+2016-11-11 12:08:35,842 2AU section name section_name does not exist
+2016-11-11 12:08:36,205 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:17:50,572 2AU ---- logger init ----
+2016-11-11 12:17:50,573 2AU selected roles : [4]
+2016-11-11 12:17:50,574 2AU section name section_name does not exist
+2016-11-11 12:17:51,027 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:21:44,462 2AU ---- logger init ----
+2016-11-11 12:21:44,464 2AU selected roles : [4]
+2016-11-11 12:21:44,464 2AU section name section_name does not exist
+2016-11-11 12:21:44,821 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:23:09,076 2AU ---- logger init ----
+2016-11-11 12:23:09,077 2AU selected roles : [4]
+2016-11-11 12:23:09,078 2AU section name section_name does not exist
+2016-11-11 12:23:09,550 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:24:25,473 2AU ---- logger init ----
+2016-11-11 12:24:25,474 2AU selected roles : [4]
+2016-11-11 12:24:25,475 2AU section name section_name does not exist
+2016-11-11 12:24:25,876 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:24:52,877 2AU ---- logger init ----
+2016-11-11 12:24:52,878 2AU selected roles : [4]
+2016-11-11 12:24:53,238 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:27:34,015 2AU ---- logger init ----
+2016-11-11 12:27:34,016 2AU selected roles : [4]
+2016-11-11 12:27:34,337 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:27:46,517 2AU ---- logger init ----
+2016-11-11 12:27:46,518 2AU selected roles : [4]
+2016-11-11 12:27:46,882 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:28:13,507 2AU ---- logger init ----
+2016-11-11 12:28:13,509 2AU selected roles : [4]
+2016-11-11 12:28:13,861 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:28:34,749 2AU ---- logger init ----
+2016-11-11 12:28:34,751 2AU selected roles : [4]
+2016-11-11 12:28:35,102 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:28:50,852 2AU ---- logger init ----
+2016-11-11 12:28:50,853 2AU selected roles : [4]
+2016-11-11 12:28:51,209 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:29:14,875 2AU ---- logger init ----
+2016-11-11 12:29:14,876 2AU selected roles : [4]
+2016-11-11 12:29:15,197 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:31:41,876 2AU ---- logger init ----
+2016-11-11 12:31:41,879 2AU selected roles : [4]
+2016-11-11 12:31:42,238 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:32:31,272 2AU ---- logger init ----
+2016-11-11 12:32:31,273 2AU selected roles : [4]
+2016-11-11 12:32:31,647 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:33:38,738 2AU ---- logger init ----
+2016-11-11 12:33:38,740 2AU selected roles : [4]
+2016-11-11 12:33:39,076 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:34:04,009 2AU ---- logger init ----
+2016-11-11 12:34:04,010 2AU selected roles : [4]
+2016-11-11 12:34:04,368 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:34:41,625 2AU ---- logger init ----
+2016-11-11 12:34:41,627 2AU selected roles : [4]
+2016-11-11 12:34:41,981 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:35:07,624 2AU ---- logger init ----
+2016-11-11 12:35:07,626 2AU selected roles : [4]
+2016-11-11 12:35:07,980 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:35:20,622 2AU ---- logger init ----
+2016-11-11 12:35:20,624 2AU selected roles : [4]
+2016-11-11 12:35:20,977 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:36:26,415 2AU ---- logger init ----
+2016-11-11 12:36:26,416 2AU selected roles : [4]
+2016-11-11 12:36:26,774 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:36:28,733 2AU ---- logger init ----
+2016-11-11 12:36:28,734 2AU selected roles : [4]
+2016-11-11 12:36:29,087 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:38:55,297 2AU ---- logger init ----
+2016-11-11 12:38:55,298 2AU selected roles : [4]
+2016-11-11 12:38:55,734 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:40:18,764 2AU ---- logger init ----
+2016-11-11 12:40:18,766 2AU selected roles : [4]
+2016-11-11 12:40:27,382 2AU ---- logger init ----
+2016-11-11 12:40:27,383 2AU selected roles : [4]
+2016-11-11 12:40:43,367 2AU ---- logger init ----
+2016-11-11 12:40:43,368 2AU selected roles : [4]
+2016-11-11 12:40:51,782 2AU ---- logger init ----
+2016-11-11 12:40:51,784 2AU selected roles : [4]
+2016-11-11 12:40:52,147 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:41:24,753 2AU ---- logger init ----
+2016-11-11 12:41:24,754 2AU selected roles : [4]
+2016-11-11 12:41:25,078 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:41:32,508 2AU ---- logger init ----
+2016-11-11 12:41:32,510 2AU selected roles : [4]
+2016-11-11 12:49:23,554 2AU ---- logger init ----
+2016-11-11 12:49:23,556 2AU selected roles : [4]
+2016-11-11 12:50:11,549 2AU ---- logger init ----
+2016-11-11 12:50:11,550 2AU selected roles : [4]
+2016-11-11 12:50:11,983 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 12:50:43,781 2AU ---- logger init ----
+2016-11-11 12:50:43,783 2AU selected roles : [4]
+2016-11-11 12:50:44,149 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:16:08,286 2AU ---- logger init ----
+2016-11-11 14:16:08,287 2AU selected roles : [4]
+2016-11-11 14:16:23,897 2AU ---- logger init ----
+2016-11-11 14:16:23,898 2AU selected roles : [4]
+2016-11-11 14:17:00,118 2AU ---- logger init ----
+2016-11-11 14:17:00,120 2AU selected roles : [4]
+2016-11-11 14:17:13,882 2AU ---- logger init ----
+2016-11-11 14:17:13,884 2AU selected roles : [4]
+2016-11-11 14:17:15,736 2AU ---- logger init ----
+2016-11-11 14:17:15,738 2AU selected roles : [4]
+2016-11-11 14:18:44,250 2AU ---- logger init ----
+2016-11-11 14:18:44,251 2AU selected roles : [4]
+2016-11-11 14:18:44,706 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:20:29,142 2AU ---- logger init ----
+2016-11-11 14:20:29,143 2AU selected roles : [4]
+2016-11-11 14:20:29,492 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:20:58,015 2AU ---- logger init ----
+2016-11-11 14:20:58,016 2AU selected roles : [4]
+2016-11-11 14:20:58,381 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:21:39,021 2AU ---- logger init ----
+2016-11-11 14:21:39,023 2AU selected roles : [4]
+2016-11-11 14:21:39,353 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:23:29,055 2AU ---- logger init ----
+2016-11-11 14:23:29,056 2AU selected roles : [4]
+2016-11-11 14:23:29,416 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:29:16,551 2AU ---- logger init ----
+2016-11-11 14:29:16,552 2AU selected roles : [4]
+2016-11-11 14:29:17,547 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:32:06,936 2AU ---- logger init ----
+2016-11-11 14:32:06,937 2AU selected roles : [4]
+2016-11-11 14:32:17,918 2AU ---- logger init ----
+2016-11-11 14:32:17,919 2AU selected roles : [4]
+2016-11-11 14:32:34,660 2AU ---- logger init ----
+2016-11-11 14:32:34,661 2AU selected roles : [4]
+2016-11-11 14:32:35,024 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:33:20,529 2AU ---- logger init ----
+2016-11-11 14:33:20,530 2AU selected roles : [4]
+2016-11-11 14:33:20,893 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:50:36,490 2AU ---- logger init ----
+2016-11-11 14:51:12,224 2AU ---- logger init ----
+2016-11-11 14:51:12,226 2AU selected roles : [4]
+2016-11-11 14:51:18,867 2AU ---- logger init ----
+2016-11-11 14:51:18,869 2AU selected roles : [4]
+2016-11-11 14:51:43,447 2AU ---- logger init ----
+2016-11-11 14:51:43,449 2AU selected roles : [4]
+2016-11-11 14:52:30,615 2AU ---- logger init ----
+2016-11-11 14:52:30,616 2AU selected roles : [4]
+2016-11-11 14:52:57,580 2AU ---- logger init ----
+2016-11-11 14:52:57,581 2AU selected roles : [4]
+2016-11-11 14:53:16,148 2AU ---- logger init ----
+2016-11-11 14:53:16,150 2AU selected roles : [4]
+2016-11-11 14:54:02,119 2AU ---- logger init ----
+2016-11-11 14:54:02,121 2AU selected roles : [4]
+2016-11-11 14:54:02,528 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:54:28,746 2AU ---- logger init ----
+2016-11-11 14:54:28,748 2AU selected roles : [4]
+2016-11-11 14:54:29,107 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:55:42,757 2AU ---- logger init ----
+2016-11-11 14:55:42,759 2AU selected roles : [4]
+2016-11-11 14:55:43,117 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 14:56:48,216 2AU ---- logger init ----
+2016-11-11 14:56:48,218 2AU selected roles : [4]
+2016-11-11 14:56:48,579 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 15:15:02,846 2AU ---- logger init ----
+2016-11-11 15:15:02,848 2AU selected roles : [4]
+2016-11-11 15:15:03,336 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 15:25:39,418 2AU ---- logger init ----
+2016-11-11 15:25:39,420 2AU selected roles : [4]
+2016-11-11 15:25:54,548 2AU ---- logger init ----
+2016-11-11 15:25:54,550 2AU selected roles : [4]
+2016-11-11 15:34:02,789 2AU ---- logger init ----
+2016-11-11 15:34:02,790 2AU selected roles : [4]
+2016-11-11 15:34:34,949 2AU ---- logger init ----
+2016-11-11 15:34:34,951 2AU selected roles : [4]
+2016-11-11 15:34:59,100 2AU ---- logger init ----
+2016-11-11 15:34:59,102 2AU selected roles : [4]
+2016-11-11 15:35:24,430 2AU ---- logger init ----
+2016-11-11 15:35:24,431 2AU selected roles : [4]
+2016-11-11 15:35:26,368 2AU ---- logger init ----
+2016-11-11 15:35:26,370 2AU selected roles : [4]
+2016-11-11 15:36:08,562 2AU ---- logger init ----
+2016-11-11 15:36:08,564 2AU selected roles : [4]
+2016-11-11 15:36:37,716 2AU ---- logger init ----
+2016-11-11 15:36:37,718 2AU selected roles : [4]
+2016-11-11 15:36:39,595 2AU ---- logger init ----
+2016-11-11 15:36:39,597 2AU selected roles : [4]
+2016-11-11 15:37:58,733 2AU ---- logger init ----
+2016-11-11 15:37:58,735 2AU selected roles : [4]
+2016-11-11 15:38:34,596 2AU ---- logger init ----
+2016-11-11 15:38:34,597 2AU selected roles : [4]
+2016-11-11 15:38:36,562 2AU ---- logger init ----
+2016-11-11 15:38:36,564 2AU selected roles : [4]
+2016-11-11 15:39:11,680 2AU ---- logger init ----
+2016-11-11 15:39:11,681 2AU selected roles : [4]
+2016-11-11 15:39:12,141 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 15:41:16,463 2AU ---- logger init ----
+2016-11-11 15:41:16,464 2AU selected roles : [4]
+2016-11-11 15:42:21,492 2AU ---- logger init ----
+2016-11-11 15:42:21,494 2AU selected roles : [4]
+2016-11-11 15:42:23,496 2AU ---- logger init ----
+2016-11-11 15:42:23,497 2AU selected roles : [4]
+2016-11-11 15:43:44,345 2AU ---- logger init ----
+2016-11-11 15:43:44,346 2AU selected roles : [4]
+2016-11-11 15:43:44,702 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 15:43:55,629 2AU ---- logger init ----
+2016-11-11 15:43:55,630 2AU selected roles : [4]
+2016-11-11 15:43:56,067 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 15:46:37,339 2AU ---- logger init ----
+2016-11-11 15:46:37,341 2AU selected roles : [4]
+2016-11-11 15:46:39,374 2AU ---- logger init ----
+2016-11-11 15:46:39,375 2AU selected roles : [4]
+2016-11-11 15:47:05,116 2AU ---- logger init ----
+2016-11-11 15:47:05,117 2AU selected roles : [4]
+2016-11-11 15:47:05,476 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 15:49:02,743 2AU ---- logger init ----
+2016-11-11 15:49:02,744 2AU selected roles : [4]
+2016-11-11 15:49:03,164 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 15:50:08,092 2AU ---- logger init ----
+2016-11-11 15:50:08,093 2AU selected roles : [4]
+2016-11-11 15:50:08,643 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 15:51:00,634 2AU ---- logger init ----
+2016-11-11 15:51:00,635 2AU selected roles : [4]
+2016-11-11 15:55:24,769 2AU ---- logger init ----
+2016-11-11 15:55:24,771 2AU selected roles : [4]
+2016-11-11 15:56:06,137 2AU ---- logger init ----
+2016-11-11 15:56:06,138 2AU selected roles : [4]
+2016-11-11 15:58:36,772 2AU ---- logger init ----
+2016-11-11 15:58:36,774 2AU selected roles : [4]
+2016-11-11 15:58:38,992 2AU ---- logger init ----
+2016-11-11 15:58:38,994 2AU selected roles : [4]
+2016-11-11 16:00:02,644 2AU ---- logger init ----
+2016-11-11 16:00:02,645 2AU selected roles : [4]
+2016-11-11 16:03:36,140 2AU ---- logger init ----
+2016-11-11 16:04:37,063 2AU ---- logger init ----
+2016-11-11 16:04:37,064 2AU selected roles : [4]
+2016-11-11 16:04:37,517 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:05:57,033 2AU ---- logger init ----
+2016-11-11 16:05:57,035 2AU selected roles : [4]
+2016-11-11 16:05:57,350 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:06:00,051 2AU ---- logger init ----
+2016-11-11 16:06:00,053 2AU selected roles : [4]
+2016-11-11 16:06:00,409 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:06:23,269 2AU ---- logger init ----
+2016-11-11 16:06:23,270 2AU selected roles : [4]
+2016-11-11 16:06:23,629 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:06:23,813 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:06:38,519 2AU ---- logger init ----
+2016-11-11 16:06:38,520 2AU selected roles : [4]
+2016-11-11 16:06:38,840 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:06:39,025 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:06:46,418 2AU ---- logger init ----
+2016-11-11 16:06:46,419 2AU selected roles : [4]
+2016-11-11 16:06:46,735 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:06:46,926 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:07:21,647 2AU ---- logger init ----
+2016-11-11 16:07:21,648 2AU selected roles : [4]
+2016-11-11 16:07:22,034 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:07:22,341 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:07:58,517 2AU ---- logger init ----
+2016-11-11 16:07:58,519 2AU selected roles : [4]
+2016-11-11 16:07:58,845 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-11 16:07:59,032 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 10:56:02,759 2AU ---- logger init ----
+2016-11-14 10:56:02,815 2AU selected roles : [4]
+2016-11-14 10:56:03,539 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 10:56:03,775 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 10:57:38,838 2AU ---- logger init ----
+2016-11-14 10:57:38,839 2AU selected roles : [4]
+2016-11-14 10:57:39,171 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 10:57:39,359 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 10:58:25,086 2AU ---- logger init ----
+2016-11-14 10:58:25,087 2AU selected roles : [4]
+2016-11-14 10:58:25,414 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 10:58:25,609 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 10:59:58,375 2AU ---- logger init ----
+2016-11-14 10:59:58,376 2AU selected roles : [4]
+2016-11-14 10:59:58,714 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 10:59:58,913 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:01:00,339 2AU ---- logger init ----
+2016-11-14 11:01:00,341 2AU selected roles : [4]
+2016-11-14 11:01:00,658 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:01:01,851 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:01:09,701 2AU ---- logger init ----
+2016-11-14 11:01:09,703 2AU selected roles : [4]
+2016-11-14 11:01:10,106 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:02:18,142 2AU ---- logger init ----
+2016-11-14 11:02:18,143 2AU selected roles : [4]
+2016-11-14 11:02:18,538 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:03:09,517 2AU ---- logger init ----
+2016-11-14 11:03:09,519 2AU selected roles : [4]
+2016-11-14 11:03:09,989 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:04:15,268 2AU ---- logger init ----
+2016-11-14 11:04:15,269 2AU selected roles : [4]
+2016-11-14 11:04:15,597 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:05:10,156 2AU ---- logger init ----
+2016-11-14 11:05:10,157 2AU selected roles : [4]
+2016-11-14 11:05:10,555 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:06:42,772 2AU ---- logger init ----
+2016-11-14 11:06:42,773 2AU selected roles : [4]
+2016-11-14 11:06:43,230 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:07:10,617 2AU ---- logger init ----
+2016-11-14 11:07:10,618 2AU selected roles : [4]
+2016-11-14 11:07:11,510 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:07:34,369 2AU ---- logger init ----
+2016-11-14 11:07:34,370 2AU selected roles : [4]
+2016-11-14 11:07:35,683 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:08:15,631 2AU ---- logger init ----
+2016-11-14 11:08:15,632 2AU selected roles : [4]
+2016-11-14 11:08:16,013 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:11:02,461 2AU ---- logger init ----
+2016-11-14 11:11:02,463 2AU selected roles : [4]
+2016-11-14 11:11:03,553 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:11:26,876 2AU ---- logger init ----
+2016-11-14 11:11:26,878 2AU selected roles : [4]
+2016-11-14 11:11:26,963 2AU section name SUBJECT does not exist
+2016-11-14 11:11:27,197 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:12:19,251 2AU ---- logger init ----
+2016-11-14 11:12:19,253 2AU selected roles : [4]
+2016-11-14 11:12:19,628 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:12:42,003 2AU ---- logger init ----
+2016-11-14 11:12:42,004 2AU selected roles : [4]
+2016-11-14 11:12:46,843 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:13:13,530 2AU ---- logger init ----
+2016-11-14 11:13:13,531 2AU selected roles : [4]
+2016-11-14 11:13:13,896 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:14:15,136 2AU ---- logger init ----
+2016-11-14 11:14:15,138 2AU selected roles : [4]
+2016-11-14 11:14:15,509 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:14:42,514 2AU ---- logger init ----
+2016-11-14 11:14:42,515 2AU selected roles : [4]
+2016-11-14 11:14:42,840 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:16:11,000 2AU ---- logger init ----
+2016-11-14 11:16:11,001 2AU selected roles : [4]
+2016-11-14 11:16:11,394 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:17:14,740 2AU ---- logger init ----
+2016-11-14 11:17:14,742 2AU selected roles : [4]
+2016-11-14 11:17:15,512 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:18:10,127 2AU ---- logger init ----
+2016-11-14 11:18:10,132 2AU selected roles : [4]
+2016-11-14 11:18:10,629 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:19:32,781 2AU ---- logger init ----
+2016-11-14 11:19:32,782 2AU selected roles : [4]
+2016-11-14 11:19:33,106 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:19:58,011 2AU ---- logger init ----
+2016-11-14 11:19:58,013 2AU selected roles : [4]
+2016-11-14 11:19:58,379 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:20:16,239 2AU ---- logger init ----
+2016-11-14 11:20:16,241 2AU selected roles : [4]
+2016-11-14 11:20:16,600 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:21:11,541 2AU ---- logger init ----
+2016-11-14 11:21:11,542 2AU selected roles : [4]
+2016-11-14 11:21:11,863 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:22:26,642 2AU ---- logger init ----
+2016-11-14 11:22:26,643 2AU selected roles : [4]
+2016-11-14 11:22:27,014 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:23:18,691 2AU ---- logger init ----
+2016-11-14 11:23:18,692 2AU selected roles : [4]
+2016-11-14 11:23:19,228 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:25:31,073 2AU ---- logger init ----
+2016-11-14 11:25:31,075 2AU selected roles : [4]
+2016-11-14 11:25:31,686 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:26:12,108 2AU ---- logger init ----
+2016-11-14 11:26:12,110 2AU selected roles : [4]
+2016-11-14 11:26:12,494 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:26:40,564 2AU ---- logger init ----
+2016-11-14 11:26:40,565 2AU selected roles : [4]
+2016-11-14 11:26:40,901 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:27:13,153 2AU ---- logger init ----
+2016-11-14 11:27:13,154 2AU selected roles : [4]
+2016-11-14 11:27:13,665 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:27:35,939 2AU ---- logger init ----
+2016-11-14 11:27:35,941 2AU selected roles : [4]
+2016-11-14 11:27:36,482 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:28:48,288 2AU ---- logger init ----
+2016-11-14 11:28:48,289 2AU selected roles : [4]
+2016-11-14 11:28:48,625 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:29:32,419 2AU ---- logger init ----
+2016-11-14 11:29:32,420 2AU selected roles : [4]
+2016-11-14 11:29:32,812 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:37:28,974 2AU ---- logger init ----
+2016-11-14 11:37:28,975 2AU selected roles : [4]
+2016-11-14 11:37:29,978 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:37:46,722 2AU ---- logger init ----
+2016-11-14 11:37:46,729 2AU selected roles : [4]
+2016-11-14 11:37:47,130 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:38:34,712 2AU ---- logger init ----
+2016-11-14 11:38:34,713 2AU selected roles : [4]
+2016-11-14 11:38:35,073 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:39:46,603 2AU ---- logger init ----
+2016-11-14 11:39:46,604 2AU selected roles : [4]
+2016-11-14 11:39:46,985 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:40:21,840 2AU ---- logger init ----
+2016-11-14 11:40:21,841 2AU selected roles : [4]
+2016-11-14 11:40:22,256 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:40:44,955 2AU ---- logger init ----
+2016-11-14 11:40:44,956 2AU selected roles : [4]
+2016-11-14 11:40:45,278 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:41:44,311 2AU ---- logger init ----
+2016-11-14 11:41:44,312 2AU selected roles : [4]
+2016-11-14 11:41:44,843 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:42:44,310 2AU ---- logger init ----
+2016-11-14 11:42:44,312 2AU selected roles : [4]
+2016-11-14 11:42:44,634 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:44:03,735 2AU ---- logger init ----
+2016-11-14 11:44:03,737 2AU selected roles : [4]
+2016-11-14 11:44:04,058 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:44:52,732 2AU ---- logger init ----
+2016-11-14 11:44:52,733 2AU selected roles : [4]
+2016-11-14 11:44:53,165 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:46:16,991 2AU ---- logger init ----
+2016-11-14 11:46:16,993 2AU selected roles : [4]
+2016-11-14 11:46:17,409 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:46:48,207 2AU ---- logger init ----
+2016-11-14 11:46:48,209 2AU selected roles : [4]
+2016-11-14 11:46:48,570 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:48:42,607 2AU ---- logger init ----
+2016-11-14 11:48:42,608 2AU selected roles : [4]
+2016-11-14 11:48:42,942 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:49:59,626 2AU ---- logger init ----
+2016-11-14 11:49:59,628 2AU selected roles : [4]
+2016-11-14 11:50:25,464 2AU ---- logger init ----
+2016-11-14 11:50:25,466 2AU selected roles : [4]
+2016-11-14 11:50:25,904 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:50:49,010 2AU ---- logger init ----
+2016-11-14 11:50:49,011 2AU selected roles : [4]
+2016-11-14 11:50:49,466 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:51:14,036 2AU ---- logger init ----
+2016-11-14 11:51:14,037 2AU selected roles : [4]
+2016-11-14 11:51:14,355 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:51:43,264 2AU ---- logger init ----
+2016-11-14 11:51:43,265 2AU selected roles : [4]
+2016-11-14 11:51:43,594 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 11:52:43,719 2AU ---- logger init ----
+2016-11-14 11:52:43,720 2AU selected roles : [4]
+2016-11-14 11:52:44,044 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 12:02:19,389 2AU ---- logger init ----
+2016-11-14 12:02:19,391 2AU selected roles : [4]
+2016-11-14 12:02:21,237 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 12:02:55,043 2AU ---- logger init ----
+2016-11-14 12:02:55,044 2AU selected roles : [4]
+2016-11-14 12:02:55,367 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 12:03:53,667 2AU ---- logger init ----
+2016-11-14 12:03:53,669 2AU selected roles : [4]
+2016-11-14 12:03:54,033 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com,fares.benkhalifa@st.com']
+2016-11-14 12:05:09,562 2AU ---- logger init ----
+2016-11-14 12:05:09,563 2AU selected roles : [4]
+2016-11-14 12:05:09,882 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com,fares.benkhalifa@st.com']
+2016-11-14 12:05:41,493 2AU ---- logger init ----
+2016-11-14 12:05:41,494 2AU selected roles : [4]
+2016-11-14 12:05:41,814 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 12:06:46,662 2AU ---- logger init ----
+2016-11-14 12:06:46,663 2AU selected roles : [4]
+2016-11-14 12:06:47,079 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com', 'fares.benkhalifa@st.com']
+2016-11-14 12:18:53,531 2AU ---- logger init ----
+2016-11-14 12:18:53,533 2AU selected roles : [2]
+2016-11-14 12:18:54,028 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com', 'fares.benkhalifa@st.com']
+2016-11-14 12:21:38,585 2AU ---- logger init ----
+2016-11-14 12:21:38,587 2AU selected roles : [2]
+2016-11-14 12:21:38,952 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com', 'fares.benkhalifa@st.com']
+2016-11-14 12:26:51,345 2AU ---- logger init ----
+2016-11-14 12:26:51,347 2AU selected roles : [8, 4, 2]
+2016-11-14 12:26:52,136 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com', 'fares.benkhalifa@st.com']
+2016-11-14 12:26:52,535 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com', 'fares.benkhalifa@st.com']
+2016-11-14 12:26:52,933 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com', 'fares.benkhalifa@st.com']
+2016-11-14 12:27:37,091 2AU ---- logger init ----
+2016-11-14 12:27:37,092 2AU selected roles : [8, 4, 2]
+2016-11-14 12:27:37,455 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com', 'fares.benkhalifa@st.com']
+2016-11-14 12:27:37,863 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com', 'fares.benkhalifa@st.com']
+2016-11-14 12:27:38,261 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com', 'fares.benkhalifa@st.com']
+2016-11-14 12:36:56,226 2AU ---- logger init ----
+2016-11-14 12:36:56,228 2AU selected roles : [8, 4, 2]
+2016-11-14 12:36:56,323 2AU section name To does not exist
+2016-11-14 12:36:56,610 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 12:36:57,013 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 12:36:57,143 2AU section name To does not exist
+2016-11-14 12:36:57,368 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 12:38:47,466 2AU ---- logger init ----
+2016-11-14 12:38:47,467 2AU selected roles : [8, 4, 2]
+2016-11-14 12:38:47,553 2AU section name To does not exist
+2016-11-14 12:38:47,553 2AU section name To does not exist
+2016-11-14 12:38:47,828 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 12:38:48,203 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 12:38:48,332 2AU section name To does not exist
+2016-11-14 12:38:48,332 2AU section name To does not exist
+2016-11-14 12:38:48,569 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:44:29,995 2AU ---- logger init ----
+2016-11-14 13:44:29,997 2AU selected roles : [8, 4, 2]
+2016-11-14 13:44:33,060 2AU section name To does not exist
+2016-11-14 13:44:33,297 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:44:33,651 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:44:33,778 2AU section name To does not exist
+2016-11-14 13:44:34,006 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:49:05,636 2AU ---- logger init ----
+2016-11-14 13:49:05,637 2AU selected roles : [8, 4, 2]
+2016-11-14 13:49:05,723 2AU section name To does not exist
+2016-11-14 13:49:05,723 2AU section name To does not exist
+2016-11-14 13:49:05,995 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:49:06,351 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:49:06,484 2AU section name To does not exist
+2016-11-14 13:49:06,484 2AU section name To does not exist
+2016-11-14 13:49:06,805 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:50:11,804 2AU ---- logger init ----
+2016-11-14 13:50:11,805 2AU selected roles : [8, 4, 2]
+2016-11-14 13:50:11,892 2AU section name To does not exist
+2016-11-14 13:50:11,892 2AU section name To does not exist
+2016-11-14 13:50:12,161 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:50:12,520 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:50:12,648 2AU section name To does not exist
+2016-11-14 13:50:12,648 2AU section name To does not exist
+2016-11-14 13:50:12,875 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:50:57,753 2AU ---- logger init ----
+2016-11-14 13:50:57,755 2AU selected roles : [8, 4, 2]
+2016-11-14 13:50:57,841 2AU section name To does not exist
+2016-11-14 13:50:57,841 2AU section name To does not exist
+2016-11-14 13:50:58,117 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:50:58,536 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:50:58,665 2AU section name To does not exist
+2016-11-14 13:50:58,665 2AU section name To does not exist
+2016-11-14 13:50:58,931 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:52:02,335 2AU ---- logger init ----
+2016-11-14 13:52:02,336 2AU selected roles : [8, 4, 2]
+2016-11-14 13:52:04,022 2AU section name To does not exist
+2016-11-14 13:52:04,022 2AU section name To does not exist
+2016-11-14 13:52:04,254 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:52:04,650 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:52:04,781 2AU section name To does not exist
+2016-11-14 13:52:04,781 2AU section name To does not exist
+2016-11-14 13:52:05,045 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:52:41,016 2AU ---- logger init ----
+2016-11-14 13:52:41,018 2AU selected roles : [8, 4, 2]
+2016-11-14 13:52:41,107 2AU section name To does not exist
+2016-11-14 13:52:41,375 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:52:41,734 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:52:41,863 2AU section name To does not exist
+2016-11-14 13:52:42,130 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:53:04,680 2AU ---- logger init ----
+2016-11-14 13:53:04,681 2AU selected roles : [8, 4, 2]
+2016-11-14 13:53:04,921 2AU section name To does not exist
+2016-11-14 13:53:04,921 2AU section name To does not exist
+2016-11-14 13:53:05,322 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:53:06,218 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:53:06,494 2AU section name To does not exist
+2016-11-14 13:53:06,494 2AU section name To does not exist
+2016-11-14 13:53:06,966 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:53:21,063 2AU ---- logger init ----
+2016-11-14 13:53:21,065 2AU selected roles : [8, 4, 2]
+2016-11-14 13:53:21,174 2AU section name To does not exist
+2016-11-14 13:53:21,768 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:53:22,500 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:53:22,935 2AU section name To does not exist
+2016-11-14 13:53:23,534 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:53:40,222 2AU ---- logger init ----
+2016-11-14 13:53:40,224 2AU selected roles : [8, 4, 2]
+2016-11-14 13:53:40,310 2AU section name To does not exist
+2016-11-14 13:53:40,586 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:53:40,953 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:53:41,083 2AU section name To does not exist
+2016-11-14 13:53:41,306 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:55:07,183 2AU ---- logger init ----
+2016-11-14 13:55:07,188 2AU selected roles : [8, 4, 2]
+2016-11-14 13:55:15,785 2AU ---- logger init ----
+2016-11-14 13:55:15,786 2AU selected roles : [8, 4, 2]
+2016-11-14 13:55:15,872 2AU section name To does not exist
+2016-11-14 13:55:16,103 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:55:16,506 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 13:55:16,634 2AU section name To does not exist
+2016-11-14 13:55:16,936 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 14:09:56,810 2AU ---- logger init ----
+2016-11-14 14:09:56,812 2AU selected roles : [8, 4, 2]
+2016-11-14 14:09:56,907 2AU section name To does not exist
+2016-11-14 14:09:57,142 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 14:09:57,504 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 14:09:57,631 2AU section name To does not exist
+2016-11-14 14:09:57,860 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 14:11:57,094 2AU ---- logger init ----
+2016-11-14 14:11:57,095 2AU selected roles : [8, 4, 2]
+2016-11-14 14:11:57,186 2AU section name To does not exist
+2016-11-14 14:11:57,445 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 14:11:57,583 2AU section name To does not exist
+2016-11-14 14:11:57,864 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 14:11:58,000 2AU section name To does not exist
+2016-11-14 14:11:58,236 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 14:12:11,561 2AU ---- logger init ----
+2016-11-14 14:12:11,562 2AU selected roles : [8, 4, 2]
+2016-11-14 14:12:11,651 2AU section name To does not exist
+2016-11-14 14:12:34,362 2AU ---- logger init ----
+2016-11-14 14:12:34,364 2AU selected roles : [8, 4, 2]
+2016-11-14 14:12:34,452 2AU section name To does not exist
+2016-11-14 14:12:34,738 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:12:34,872 2AU section name To does not exist
+2016-11-14 14:12:35,120 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:12:35,253 2AU section name To does not exist
+2016-11-14 14:12:35,535 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:13:04,936 2AU ---- logger init ----
+2016-11-14 14:13:04,938 2AU selected roles : [8, 4, 2]
+2016-11-14 14:13:05,032 2AU section name TO does not exist
+2016-11-14 14:13:05,321 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:13:05,746 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:13:05,883 2AU section name TO does not exist
+2016-11-14 14:13:06,129 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:13:49,203 2AU ---- logger init ----
+2016-11-14 14:13:49,204 2AU selected roles : [8, 4, 2]
+2016-11-14 14:13:49,290 2AU section name TO does not exist
+2016-11-14 14:13:49,534 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:13:49,937 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:13:50,067 2AU section name TO does not exist
+2016-11-14 14:13:50,340 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:14:43,591 2AU ---- logger init ----
+2016-11-14 14:14:43,592 2AU selected roles : [8, 4, 2]
+2016-11-14 14:14:43,682 2AU section name TO does not exist
+2016-11-14 14:14:43,916 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:14:44,312 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:14:44,448 2AU section name TO does not exist
+2016-11-14 14:14:44,690 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:15:14,984 2AU ---- logger init ----
+2016-11-14 14:15:14,985 2AU selected roles : [8, 4, 2]
+2016-11-14 14:15:15,313 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:15:15,710 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:15:16,078 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:16:38,628 2AU ---- logger init ----
+2016-11-14 14:16:38,630 2AU selected roles : [8, 4, 2]
+2016-11-14 14:16:38,992 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:16:39,398 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:16:39,809 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:17:17,993 2AU ---- logger init ----
+2016-11-14 14:17:17,995 2AU selected roles : [8, 4, 2]
+2016-11-14 14:17:18,358 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:17:18,714 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:17:19,110 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.comd']
+2016-11-14 14:17:46,727 2AU ---- logger init ----
+2016-11-14 14:17:46,728 2AU selected roles : [8, 4, 2]
+2016-11-14 14:17:47,043 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:17:47,441 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:17:47,845 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:20:48,483 2AU ---- logger init ----
+2016-11-14 14:20:48,486 2AU selected roles : [8, 4, 2]
+2016-11-14 14:20:48,830 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:20:49,231 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:20:49,590 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:23:32,391 2AU ---- logger init ----
+2016-11-14 14:23:32,393 2AU selected roles : [8, 4, 2]
+2016-11-14 14:23:33,027 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:23:45,735 2AU ---- logger init ----
+2016-11-14 14:23:45,737 2AU selected roles : [8, 4, 2]
+2016-11-14 14:23:46,050 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:23:46,454 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:23:46,813 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:24:26,713 2AU ---- logger init ----
+2016-11-14 14:24:26,714 2AU selected roles : [8, 4, 2]
+2016-11-14 14:24:27,040 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:25:03,152 2AU ---- logger init ----
+2016-11-14 14:25:03,154 2AU selected roles : [8, 4, 2]
+2016-11-14 14:25:03,541 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:25:25,004 2AU ---- logger init ----
+2016-11-14 14:25:25,005 2AU selected roles : [8, 4, 2]
+2016-11-14 14:25:25,331 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:25:25,709 2AU mail sent from upgradeAutomation@st.com to mohamed-rafik.benmansour@st.com
+2016-11-14 14:25:26,158 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:26:15,889 2AU ---- logger init ----
+2016-11-14 14:26:15,892 2AU selected roles : [8, 4, 2]
+2016-11-14 14:26:16,236 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:26:16,598 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:26:16,961 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:26:32,450 2AU ---- logger init ----
+2016-11-14 14:26:32,453 2AU selected roles : [8, 4, 2]
+2016-11-14 14:26:32,778 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 14:26:33,133 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 14:26:33,488 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 14:29:37,227 2AU ---- logger init ----
+2016-11-14 14:29:37,228 2AU selected roles : [8, 4, 2]
+2016-11-14 14:29:37,685 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 14:29:38,049 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com, mohamedamine.doghri@st.com']
+2016-11-14 14:29:38,419 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-14 17:02:22,763 2AU ---- logger init ----
+2016-11-14 17:02:22,764 2AU selected roles : [8]
+2016-11-14 17:02:23,504 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 17:02:23,781 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-14 17:06:43,330 2AU ---- logger init ----
+2016-11-14 17:06:43,333 2AU selected roles : [4, 1]
+2016-11-14 17:06:48,769 2AU ---- logger init ----
+2016-11-14 17:06:48,770 2AU selected roles : [4, 1]
+2016-11-14 17:07:10,161 2AU ---- logger init ----
+2016-11-14 17:07:10,162 2AU selected roles : [4, 1]
+2016-11-14 17:08:11,792 2AU ---- logger init ----
+2016-11-14 17:08:11,793 2AU selected roles : [4, 1]
+2016-11-14 17:09:11,146 2AU ---- logger init ----
+2016-11-14 17:09:11,148 2AU selected roles : [4, 1]
+2016-11-14 17:09:11,235 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com, mohamedamin.doghri@st.com']
+2016-11-14 17:09:11,533 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com, mohamedamin.doghri@st.com']
+2016-11-14 17:09:12,788 p=24464 u=root |  PLAY [all] *********************************************************************
+2016-11-14 17:09:12,991 p=24464 u=root |   [WARNING]: The variable 'environment' appears to be used already, which is also used internally for environment variables set on the task/block/play. You should use a different variable name to avoid conflicts with this internal variable
+
+2016-11-14 17:09:12,992 p=24464 u=root |  TASK [setup] *******************************************************************
+2016-11-14 17:09:13,734 p=24464 u=root |  fatal: [codes-test.cro.st.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-11-14 17:09:13,769 p=24464 u=root |  	to retry, use: --limit @/root/2AU_python_script/playbook/playbooks/raf.retry
+
+2016-11-14 17:09:13,770 p=24464 u=root |  PLAY RECAP *********************************************************************
+2016-11-14 17:09:13,770 p=24464 u=root |  codes-test.cro.st.com      : ok=0    changed=0    unreachable=1    failed=0   
+2016-11-14 17:09:44,402 2AU ---- logger init ----
+2016-11-14 17:09:44,403 2AU selected roles : [4, 1]
+2016-11-14 17:09:44,618 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com, mohamedamin.doghri@st.com']
+2016-11-14 17:09:44,917 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com, mohamedamin.doghri@st.com']
+2016-11-14 17:09:45,136 p=24474 u=root |  PLAY [all] *********************************************************************
+2016-11-14 17:09:45,191 p=24474 u=root |   [WARNING]: The variable 'environment' appears to be used already, which is also used internally for environment variables set on the task/block/play. You should use a different variable name to avoid conflicts with this internal variable
+
+2016-11-14 17:09:45,193 p=24474 u=root |  TASK [setup] *******************************************************************
+2016-11-14 17:09:47,814 p=24474 u=root |  ok: [127.0.0.1]
+2016-11-14 17:09:47,938 p=24474 u=root |  TASK [Add TuleapDirect repository] *********************************************
+2016-11-14 17:09:48,650 p=24474 u=root |  ok: [127.0.0.1]
+2016-11-14 17:09:48,663 p=24474 u=root |  TASK [create  /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64 if it doesn't exist] ***
+2016-11-14 17:09:49,246 p=24474 u=root |  ok: [127.0.0.1]
+2016-11-14 17:09:49,256 p=24474 u=root |  TASK [create Backup folder /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/backup if it doesn't exist] ***
+2016-11-14 17:09:49,653 p=24474 u=root |  ok: [127.0.0.1]
+2016-11-14 17:09:49,665 p=24474 u=root |  TASK [Backup old rpms] *********************************************************
+2016-11-14 17:10:30,545 p=24474 u=root |  changed: [127.0.0.1]
+2016-11-14 17:10:30,576 p=24474 u=root |  TASK [Download rpms under /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64] ***
+2016-11-14 17:10:43,390 p=24474 u=root |  fatal: [127.0.0.1]: FAILED! => {"changed": true, "cmd": ["yum", "update", "tuleap*", "-y", "--enablerepo=TuleapDirect", "--enablerepo=epel", "--downloadonly", "--downloaddir=/var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64"], "delta": "0:00:12.089435", "end": "2016-11-14 17:10:43.328479", "failed": true, "rc": 1, "start": "2016-11-14 17:10:31.239044", "stderr": "https://terzino:test123@tuleap.net/file/pub/tuleap/yum/tuleap/rhel/6/stable/x86_64/repodata/repomd.xml: [Errno 14] PYCURL ERROR 22 - \"HTTP response code said error\"\nTrying other mirror.\nError: Cannot retrieve repository metadata (repomd.xml) for repository: TuleapDirect. Please verify its path and try again", "stdout": "Loaded plugins: fastestmirror, refresh-packagekit, security\nSetting up Update Process\nLoading mirror speeds from cached hostfile\nCould not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os&infra=stock error was\n14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"\nCould not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=x86_64 error was\n14: PYCURL ERROR 22 - \"HTTP response code said error\"\nCould not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-source-6&arch=x86_64 error was\n14: PYCURL ERROR 22 - \"HTTP response code said error\"\nCould not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=extras&infra=stock error was\n14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"\nCould not retrieve mirrorlist http://mirrorlist.repoforge.org/el6/mirrors-rpmforge error was\n14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"\nCould not retrieve mirrorlist http://mirrorlist.repoforge.org/el6/mirrors-rpmforge-extras error was\n14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"\nCould not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates&infra=stock error was\n14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"\n * base: centosmirror.netcup.net\n * epel: epel.besthosting.ua\n * epel-source: epel.besthosting.ua\n * extras: centos.mirror.net-d-sign.de\n * rpmforge: apt.sw.be\n * rpmforge-extras: apt.sw.be\n * updates: centosmirror.netcup.net", "stdout_lines": ["Loaded plugins: fastestmirror, refresh-packagekit, security", "Setting up Update Process", "Loading mirror speeds from cached hostfile", "Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=os&infra=stock error was", "14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"", "Could not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=x86_64 error was", "14: PYCURL ERROR 22 - \"HTTP response code said error\"", "Could not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-source-6&arch=x86_64 error was", "14: PYCURL ERROR 22 - \"HTTP response code said error\"", "Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=extras&infra=stock error was", "14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"", "Could not retrieve mirrorlist http://mirrorlist.repoforge.org/el6/mirrors-rpmforge error was", "14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"", "Could not retrieve mirrorlist http://mirrorlist.repoforge.org/el6/mirrors-rpmforge-extras error was", "14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"", "Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=6&arch=x86_64&repo=updates&infra=stock error was", "14: PYCURL ERROR 22 - \"The requested URL returned error: 407\"", " * base: centosmirror.netcup.net", " * epel: epel.besthosting.ua", " * epel-source: epel.besthosting.ua", " * extras: centos.mirror.net-d-sign.de", " * rpmforge: apt.sw.be", " * rpmforge-extras: apt.sw.be", " * updates: centosmirror.netcup.net"], "warnings": ["Consider using yum module rather than running yum"]}
+2016-11-14 17:10:43,397 p=24474 u=root |  NO MORE HOSTS LEFT *************************************************************
+2016-11-14 17:10:43,412 p=24474 u=root |  	to retry, use: --limit @/root/2AU_python_script/playbook/playbooks/raf.retry
+
+2016-11-14 17:10:43,412 p=24474 u=root |  PLAY RECAP *********************************************************************
+2016-11-14 17:10:43,413 p=24474 u=root |  127.0.0.1                  : ok=5    changed=1    unreachable=0    failed=1   
+2016-11-15 11:29:33,235 2AU ---- logger init ----
+2016-11-15 11:29:33,249 2AU selected roles : [4, 1]
+2016-11-15 11:29:34,868 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com, mohamedamin.doghri@st.com']
+2016-11-15 11:29:35,109 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com, mohamedamin.doghri@st.com']
+2016-11-15 11:29:35,726 p=26372 u=root |  PLAY [all] *********************************************************************
+2016-11-15 11:29:35,821 p=26372 u=root |   [WARNING]: The variable 'environment' appears to be used already, which is also used internally for environment variables set on the task/block/play. You should use a different variable name to avoid conflicts with this internal variable
+
+2016-11-15 11:29:35,823 p=26372 u=root |  TASK [setup] *******************************************************************
+2016-11-15 11:29:36,799 p=26372 u=root |  fatal: [codes-test.cro.st.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-11-15 11:29:36,830 p=26372 u=root |  	to retry, use: --limit @/root/2AU_python_script/playbook/playbooks/raf.retry
+
+2016-11-15 11:29:36,831 p=26372 u=root |  PLAY RECAP *********************************************************************
+2016-11-15 11:29:36,831 p=26372 u=root |  codes-test.cro.st.com      : ok=0    changed=0    unreachable=1    failed=0   
+2016-11-15 11:37:42,663 2AU ---- logger init ----
+2016-11-15 11:37:42,664 2AU selected roles : [4, 1]
+2016-11-15 11:37:42,892 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com, mohamedamin.doghri@st.com']
+2016-11-15 11:37:43,233 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com, mohamedamin.doghri@st.com']
+2016-11-15 11:37:43,439 p=28075 u=root |  PLAY [all] *********************************************************************
+2016-11-15 11:37:43,474 p=28075 u=root |   [WARNING]: The variable 'environment' appears to be used already, which is also used internally for environment variables set on the task/block/play. You should use a different variable name to avoid conflicts with this internal variable
+
+2016-11-15 11:37:43,474 p=28075 u=root |  TASK [setup] *******************************************************************
+2016-11-15 11:37:46,148 p=28075 u=root |  ok: [127.0.0.1]
+2016-11-15 11:37:46,269 p=28075 u=root |  TASK [Add TuleapDirect repository] *********************************************
+2016-11-15 11:37:47,007 p=28075 u=root |  ok: [127.0.0.1]
+2016-11-15 11:37:47,019 p=28075 u=root |  TASK [create  /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64 if it doesn't exist] ***
+2016-11-15 11:37:47,608 p=28075 u=root |  ok: [127.0.0.1]
+2016-11-15 11:37:47,620 p=28075 u=root |  TASK [create Backup folder /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/backup if it doesn't exist] ***
+2016-11-15 11:37:48,101 p=28075 u=root |  ok: [127.0.0.1]
+2016-11-15 11:37:48,109 p=28075 u=root |  TASK [Backup old rpms] *********************************************************
+2016-11-15 11:38:28,048 p=28075 u=root |  changed: [127.0.0.1]
+2016-11-15 11:38:28,066 p=28075 u=root |  TASK [Download rpms under /var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64] ***
+2016-11-15 11:38:40,519 p=28075 u=root |  fatal: [127.0.0.1]: FAILED! => {"changed": true, "cmd": ["yum", "update", "tuleap*", "-y", "--enablerepo=TuleapDirect", "--enablerepo=epel", "--downloadonly", "--downloaddir=/var/lib/codendi/ftp/pub/codex-cc/yum/tuleap/rhel/6/stable/x86_64"], "delta": "0:00:11.549337", "end": "2016-11-15 11:38:40.458343", "failed": true, "rc": 1, "start": "2016-11-15 11:38:28.909006", "stderr": "https://terzino:test123@tuleap.net/file/pub/tuleap/yum/tuleap/rhel/6/stable/x86_64/repodata/repomd.xml: [Errno 14] PYCURL ERROR 22 - \"HTTP response code said error\"\nTrying other mirror.\nError: Cannot retrieve repository metadata (repomd.xml) for repository: TuleapDirect. Please verify its path and try again", "stdout": "Loaded plugins: fastestmirror, refresh-packagekit, security\nSetting up Update Process\nLoading mirror speeds from cached hostfile\nCould not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=x86_64 error was\n14: PYCURL ERROR 22 - \"HTTP response code said error\"\nCould not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-source-6&arch=x86_64 error was\n14: PYCURL ERROR 22 - \"HTTP response code said error\"\n * base: centosmirror.netcup.net\n * epel: epel.besthosting.ua\n * epel-source: epel.besthosting.ua\n * extras: centos.mirror.net-d-sign.de\n * rpmforge: apt.sw.be\n * rpmforge-extras: apt.sw.be\n * updates: centosmirror.netcup.net", "stdout_lines": ["Loaded plugins: fastestmirror, refresh-packagekit, security", "Setting up Update Process", "Loading mirror speeds from cached hostfile", "Could not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-6&arch=x86_64 error was", "14: PYCURL ERROR 22 - \"HTTP response code said error\"", "Could not get metalink https://mirrors.fedoraproject.org/metalink?repo=epel-source-6&arch=x86_64 error was", "14: PYCURL ERROR 22 - \"HTTP response code said error\"", " * base: centosmirror.netcup.net", " * epel: epel.besthosting.ua", " * epel-source: epel.besthosting.ua", " * extras: centos.mirror.net-d-sign.de", " * rpmforge: apt.sw.be", " * rpmforge-extras: apt.sw.be", " * updates: centosmirror.netcup.net"], "warnings": ["Consider using yum module rather than running yum"]}
+2016-11-15 11:38:40,527 p=28075 u=root |  NO MORE HOSTS LEFT *************************************************************
+2016-11-15 11:38:40,542 p=28075 u=root |  	to retry, use: --limit @/root/2AU_python_script/playbook/playbooks/raf.retry
+
+2016-11-15 11:38:40,543 p=28075 u=root |  PLAY RECAP *********************************************************************
+2016-11-15 11:38:40,543 p=28075 u=root |  127.0.0.1                  : ok=5    changed=1    unreachable=0    failed=1   
+2016-11-15 11:39:56,380 2AU ---- logger init ----
+2016-11-15 11:39:56,383 2AU selected roles : [8, 2]
+2016-11-15 11:39:56,720 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 11:39:57,091 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 11:50:33,897 2AU ---- logger init ----
+2016-11-15 11:50:33,899 2AU selected roles : [8, 4, 2]
+2016-11-15 11:50:34,312 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-15 11:50:34,443 2AU recipients are specified in the template : ['fares.benkhalifa@st.com']
+2016-11-15 11:50:34,684 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-15 11:50:35,059 2AU mail sent from upgradeAutomation@st.com to ['fares.benkhalifa@st.com']
+2016-11-15 16:34:46,913 2AU ---- logger init ----
+2016-11-15 16:34:46,914 2AU selected roles : [4]
+2016-11-15 16:34:48,143 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:34:51,665 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:36:05,990 2AU ---- logger init ----
+2016-11-15 16:36:05,992 2AU selected roles : [4]
+2016-11-15 16:36:06,196 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:36:06,553 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:36:56,273 2AU ---- logger init ----
+2016-11-15 16:36:56,274 2AU selected roles : [4]
+2016-11-15 16:36:56,461 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:36:57,282 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:48:30,273 2AU ---- logger init ----
+2016-11-15 16:48:30,274 2AU selected roles : [4]
+2016-11-15 16:48:30,449 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:48:30,731 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:48:53,652 2AU ---- logger init ----
+2016-11-15 16:48:53,654 2AU selected roles : [4]
+2016-11-15 16:48:53,769 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:48:54,022 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:49:34,775 2AU ---- logger init ----
+2016-11-15 16:49:34,776 2AU selected roles : [4]
+2016-11-15 16:49:34,866 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:49:35,139 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:50:44,276 2AU ---- logger init ----
+2016-11-15 16:50:44,277 2AU selected roles : [4]
+2016-11-15 16:50:44,383 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:50:44,621 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:51:17,015 2AU ---- logger init ----
+2016-11-15 16:51:17,016 2AU selected roles : [4]
+2016-11-15 16:51:17,113 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:51:18,375 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:52:57,685 2AU ---- logger init ----
+2016-11-15 16:52:57,694 2AU selected roles : [4]
+2016-11-15 16:52:57,793 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:52:58,030 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:53:37,649 2AU ---- logger init ----
+2016-11-15 16:53:37,650 2AU selected roles : [4]
+2016-11-15 16:53:37,735 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:53:37,978 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:57:32,293 2AU ---- logger init ----
+2016-11-15 16:57:32,295 2AU selected roles : [4]
+2016-11-15 16:57:32,467 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:57:32,752 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:58:06,421 2AU ---- logger init ----
+2016-11-15 16:58:06,423 2AU selected roles : [4]
+2016-11-15 16:58:06,563 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:58:06,874 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:58:09,569 2AU ---- logger init ----
+2016-11-15 16:58:09,570 2AU selected roles : [4]
+2016-11-15 16:58:09,667 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:58:09,900 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:58:33,926 2AU ---- logger init ----
+2016-11-15 16:58:33,927 2AU selected roles : [4]
+2016-11-15 16:58:34,015 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:58:34,268 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:58:55,299 2AU ---- logger init ----
+2016-11-15 16:58:55,300 2AU selected roles : [4]
+2016-11-15 16:58:55,526 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 16:58:55,896 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:01:04,675 2AU ---- logger init ----
+2016-11-15 17:01:04,676 2AU selected roles : [4]
+2016-11-15 17:01:04,764 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:01:05,028 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:01:22,834 2AU ---- logger init ----
+2016-11-15 17:01:22,835 2AU selected roles : [4]
+2016-11-15 17:01:22,927 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:01:23,214 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:02:34,046 2AU ---- logger init ----
+2016-11-15 17:02:34,047 2AU selected roles : [4]
+2016-11-15 17:02:34,184 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:02:34,468 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:02:58,831 2AU ---- logger init ----
+2016-11-15 17:02:58,832 2AU selected roles : [4]
+2016-11-15 17:02:58,935 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:02:59,208 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:03:01,082 2AU ---- logger init ----
+2016-11-15 17:03:01,083 2AU selected roles : [4]
+2016-11-15 17:03:01,175 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:03:01,457 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:03:14,228 2AU ---- logger init ----
+2016-11-15 17:03:14,229 2AU selected roles : [4]
+2016-11-15 17:03:14,315 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:03:14,594 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:03:53,358 2AU ---- logger init ----
+2016-11-15 17:03:53,359 2AU selected roles : [4]
+2016-11-15 17:03:53,455 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:03:53,767 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:04:46,087 2AU ---- logger init ----
+2016-11-15 17:04:46,088 2AU selected roles : [4]
+2016-11-15 17:04:46,174 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:04:46,465 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:05:40,228 2AU ---- logger init ----
+2016-11-15 17:05:40,229 2AU selected roles : [4]
+2016-11-15 17:05:40,353 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:05:40,678 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:05:55,945 2AU ---- logger init ----
+2016-11-15 17:05:55,946 2AU selected roles : [4]
+2016-11-15 17:05:56,076 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:05:56,486 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:08:43,822 2AU ---- logger init ----
+2016-11-15 17:08:43,823 2AU selected roles : [4]
+2016-11-15 17:08:43,910 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:08:44,210 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:09:04,452 2AU ---- logger init ----
+2016-11-15 17:09:04,454 2AU selected roles : [4]
+2016-11-15 17:09:04,540 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:09:04,778 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:11:07,862 2AU ---- logger init ----
+2016-11-15 17:11:07,863 2AU selected roles : [4]
+2016-11-15 17:11:07,949 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:11:08,239 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:11:17,976 2AU ---- logger init ----
+2016-11-15 17:11:17,977 2AU selected roles : [4]
+2016-11-15 17:11:18,077 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:11:18,367 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:13:46,654 2AU ---- logger init ----
+2016-11-15 17:13:46,655 2AU selected roles : [4]
+2016-11-15 17:13:46,741 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:13:46,975 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:13:59,370 2AU ---- logger init ----
+2016-11-15 17:13:59,371 2AU selected roles : [4]
+2016-11-15 17:13:59,548 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:13:59,835 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:15:33,865 2AU ---- logger init ----
+2016-11-15 17:15:33,873 2AU selected roles : [4]
+2016-11-15 17:15:33,971 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-15 17:15:34,210 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:27:21,966 2AU ---- logger init ----
+2016-11-16 12:27:21,967 2AU selected roles : [4]
+2016-11-16 12:27:22,161 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:27:22,407 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:27:24,710 2AU ---- logger init ----
+2016-11-16 12:27:24,712 2AU selected roles : [4]
+2016-11-16 12:27:24,797 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:27:25,039 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:27:35,930 2AU ---- logger init ----
+2016-11-16 12:27:35,932 2AU selected roles : [4]
+2016-11-16 12:27:36,019 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:27:36,255 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:27:38,707 2AU ---- logger init ----
+2016-11-16 12:27:38,708 2AU selected roles : [4]
+2016-11-16 12:27:38,793 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:27:39,025 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:33:03,103 2AU ---- logger init ----
+2016-11-16 12:33:03,104 2AU selected roles : [4]
+2016-11-16 12:33:03,189 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:33:03,425 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:36:23,007 2AU ---- logger init ----
+2016-11-16 12:36:23,009 2AU selected roles : [4]
+2016-11-16 12:36:23,095 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:36:23,333 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:40:17,623 2AU ---- logger init ----
+2016-11-16 12:40:17,624 2AU selected roles : [4]
+2016-11-16 12:40:17,710 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-16 12:40:17,943 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 11:46:36,969 2AU ---- logger init ----
+2016-11-17 11:46:51,693 2AU ---- logger init ----
+2016-11-17 11:47:20,424 2AU ---- logger init ----
+2016-11-17 11:48:03,800 2AU ---- logger init ----
+2016-11-17 11:48:29,215 2AU ---- logger init ----
+2016-11-17 11:48:46,684 2AU ---- logger init ----
+2016-11-17 11:48:46,685 2AU selected roles : [4]
+2016-11-17 11:54:39,465 2AU ---- logger init ----
+2016-11-17 11:55:11,489 2AU ---- logger init ----
+2016-11-17 11:55:17,834 2AU ---- logger init ----
+2016-11-17 11:56:00,689 2AU ---- logger init ----
+2016-11-17 11:56:00,691 2AU selected rules : []
+2016-11-17 11:57:01,215 2AU ---- logger init ----
+2016-11-17 11:57:01,217 2AU selected rules : []
+2016-11-17 11:57:30,694 2AU ---- logger init ----
+2016-11-17 11:57:30,695 2AU selected rules : []
+2016-11-17 11:57:54,742 2AU ---- logger init ----
+2016-11-17 11:57:54,743 2AU selected rules : []
+2016-11-17 11:58:28,974 2AU ---- logger init ----
+2016-11-17 11:58:28,975 2AU selected rules : []
+2016-11-17 11:58:31,949 2AU ---- logger init ----
+2016-11-17 11:58:31,951 2AU selected rules : []
+2016-11-17 11:59:20,438 2AU ---- logger init ----
+2016-11-17 11:59:20,440 2AU selected rules : []
+2016-11-17 11:59:56,229 2AU ---- logger init ----
+2016-11-17 11:59:56,231 2AU selected rules : []
+2016-11-17 12:00:09,363 2AU ---- logger init ----
+2016-11-17 12:00:09,367 2AU selected rules : []
+2016-11-17 12:00:26,579 2AU ---- logger init ----
+2016-11-17 12:00:26,580 2AU selected rules : []
+2016-11-17 12:00:30,068 2AU ---- logger init ----
+2016-11-17 12:00:30,069 2AU selected rules : []
+2016-11-17 12:01:47,108 2AU ---- logger init ----
+2016-11-17 12:01:49,956 2AU ---- logger init ----
+2016-11-17 12:01:57,857 2AU ---- logger init ----
+2016-11-17 12:02:04,328 2AU ---- logger init ----
+2016-11-17 12:03:02,376 2AU ---- logger init ----
+2016-11-17 12:04:11,997 2AU ---- logger init ----
+2016-11-17 12:04:13,611 2AU ---- logger init ----
+2016-11-17 12:04:28,551 2AU ---- logger init ----
+2016-11-17 12:04:50,626 2AU ---- logger init ----
+2016-11-17 12:05:02,025 2AU ---- logger init ----
+2016-11-17 12:05:04,487 2AU ---- logger init ----
+2016-11-17 12:09:23,853 2AU ---- logger init ----
+2016-11-17 12:10:36,658 2AU ---- logger init ----
+2016-11-17 12:10:49,874 2AU ---- logger init ----
+2016-11-17 12:10:51,859 2AU ---- logger init ----
+2016-11-17 12:11:19,363 2AU ---- logger init ----
+2016-11-17 12:11:26,221 2AU ---- logger init ----
+2016-11-17 12:11:47,787 2AU ---- logger init ----
+2016-11-17 12:13:00,404 2AU ---- logger init ----
+2016-11-17 12:16:21,380 2AU ---- logger init ----
+2016-11-17 12:16:27,487 2AU ---- logger init ----
+2016-11-17 12:17:39,626 2AU ---- logger init ----
+2016-11-17 12:20:29,124 2AU ---- logger init ----
+2016-11-17 12:21:17,386 2AU ---- logger init ----
+2016-11-17 12:22:06,923 2AU ---- logger init ----
+2016-11-17 12:23:22,687 2AU ---- logger init ----
+2016-11-17 12:23:35,532 2AU ---- logger init ----
+2016-11-17 12:25:04,888 2AU ---- logger init ----
+2016-11-17 12:26:09,299 2AU ---- logger init ----
+2016-11-17 12:26:09,303 2AU selected rules : [2]
+2016-11-17 12:26:10,080 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 12:29:10,566 2AU ---- logger init ----
+2016-11-17 12:29:10,568 2AU selected rules : [2]
+2016-11-17 12:29:10,882 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 12:29:43,531 2AU ---- logger init ----
+2016-11-17 12:29:43,533 2AU selected rules : [8, 2]
+2016-11-17 12:29:43,891 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 12:29:44,246 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 12:30:11,828 2AU ---- logger init ----
+2016-11-17 12:31:20,786 2AU ---- logger init ----
+2016-11-17 12:31:26,165 2AU ---- logger init ----
+2016-11-17 12:32:05,658 2AU ---- logger init ----
+2016-11-17 12:32:11,666 2AU ---- logger init ----
+2016-11-17 12:34:15,559 2AU ---- logger init ----
+2016-11-17 12:34:17,944 2AU ---- logger init ----
+2016-11-17 12:34:39,420 2AU ---- logger init ----
+2016-11-17 12:34:50,529 2AU ---- logger init ----
+2016-11-17 12:34:53,041 2AU ---- logger init ----
+2016-11-17 12:35:07,804 2AU ---- logger init ----
+2016-11-17 12:35:07,806 2AU selected rules : [8, 2]
+2016-11-17 12:35:08,737 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 12:35:09,140 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 12:35:23,790 2AU ---- logger init ----
+2016-11-17 12:36:43,312 2AU ---- logger init ----
+2016-11-17 12:36:47,831 2AU ---- logger init ----
+2016-11-17 12:37:29,543 2AU ---- logger init ----
+2016-11-17 13:39:58,876 2AU ---- logger init ----
+2016-11-17 13:40:03,122 2AU ---- logger init ----
+2016-11-17 13:41:42,824 2AU ---- logger init ----
+2016-11-17 13:49:47,004 2AU ---- logger init ----
+2016-11-17 13:49:59,753 2AU ---- logger init ----
+2016-11-17 13:50:01,520 2AU ---- logger init ----
+2016-11-17 13:50:29,628 2AU ---- logger init ----
+2016-11-17 13:50:54,840 2AU ---- logger init ----
+2016-11-17 13:50:56,634 2AU ---- logger init ----
+2016-11-17 13:52:05,621 2AU ---- logger init ----
+2016-11-17 13:52:08,960 2AU ---- logger init ----
+2016-11-17 13:52:20,759 2AU ---- logger init ----
+2016-11-17 13:52:23,968 2AU ---- logger init ----
+2016-11-17 13:53:31,158 2AU ---- logger init ----
+2016-11-17 13:53:39,278 2AU ---- logger init ----
+2016-11-17 13:54:07,886 2AU ---- logger init ----
+2016-11-17 13:54:16,627 2AU ---- logger init ----
+2016-11-17 13:54:43,991 2AU ---- logger init ----
+2016-11-17 13:54:45,750 2AU ---- logger init ----
+2016-11-17 13:55:02,926 2AU ---- logger init ----
+2016-11-17 13:55:13,242 2AU ---- logger init ----
+2016-11-17 13:55:25,502 2AU ---- logger init ----
+2016-11-17 13:55:35,878 2AU ---- logger init ----
+2016-11-17 13:55:42,613 2AU ---- logger init ----
+2016-11-17 13:55:44,604 2AU ---- logger init ----
+2016-11-17 13:57:27,882 2AU ---- logger init ----
+2016-11-17 13:57:27,884 2AU selected rules : []
+2016-11-17 13:59:10,683 2AU ---- logger init ----
+2016-11-17 13:59:13,389 2AU ---- logger init ----
+2016-11-17 13:59:29,910 2AU ---- logger init ----
+2016-11-17 14:00:03,429 2AU ---- logger init ----
+2016-11-17 14:00:05,803 2AU ---- logger init ----
+2016-11-17 14:05:30,003 2AU ---- logger init ----
+2016-11-17 14:05:30,005 2AU selected rules : []
+2016-11-17 14:05:32,387 2AU ---- logger init ----
+2016-11-17 14:05:32,389 2AU selected rules : []
+2016-11-17 14:07:45,423 2AU ---- logger init ----
+2016-11-17 14:07:45,425 2AU selected rules : []
+2016-11-17 14:08:08,281 2AU ---- logger init ----
+2016-11-17 14:08:08,283 2AU selected rules : []
+2016-11-17 14:08:56,385 2AU ---- logger init ----
+2016-11-17 14:08:56,387 2AU selected rules : []
+2016-11-17 14:08:59,537 2AU ---- logger init ----
+2016-11-17 14:08:59,538 2AU selected rules : []
+2016-11-17 14:09:29,033 2AU ---- logger init ----
+2016-11-17 14:09:31,014 2AU ---- logger init ----
+2016-11-17 14:10:03,875 2AU ---- logger init ----
+2016-11-17 14:10:08,263 2AU ---- logger init ----
+2016-11-17 14:10:14,802 2AU ---- logger init ----
+2016-11-17 14:11:53,719 2AU ---- logger init ----
+2016-11-17 14:11:55,557 2AU ---- logger init ----
+2016-11-17 14:14:12,921 2AU ---- logger init ----
+2016-11-17 14:14:22,924 2AU ---- logger init ----
+2016-11-17 14:15:06,547 2AU ---- logger init ----
+2016-11-17 14:15:08,682 2AU ---- logger init ----
+2016-11-17 14:15:56,176 2AU ---- logger init ----
+2016-11-17 14:21:18,072 2AU ---- logger init ----
+2016-11-17 14:23:35,093 2AU ---- logger init ----
+2016-11-17 14:23:36,940 2AU ---- logger init ----
+2016-11-17 14:24:27,291 2AU ---- logger init ----
+2016-11-17 14:24:29,217 2AU ---- logger init ----
+2016-11-17 14:26:17,205 2AU ---- logger init ----
+2016-11-17 14:26:22,052 2AU ---- logger init ----
+2016-11-17 14:26:48,957 2AU ---- logger init ----
+2016-11-17 14:27:38,346 2AU ---- logger init ----
+2016-11-17 14:28:12,836 2AU ---- logger init ----
+2016-11-17 14:28:15,101 2AU ---- logger init ----
+2016-11-17 14:28:23,361 2AU ---- logger init ----
+2016-11-17 14:32:46,241 2AU ---- logger init ----
+2016-11-17 14:32:49,454 2AU ---- logger init ----
+2016-11-17 14:33:20,339 2AU ---- logger init ----
+2016-11-17 14:34:43,202 2AU ---- logger init ----
+2016-11-17 14:34:58,127 2AU ---- logger init ----
+2016-11-17 14:38:21,481 2AU ---- logger init ----
+2016-11-17 14:38:25,837 2AU ---- logger init ----
+2016-11-17 14:42:50,603 2AU ---- logger init ----
+2016-11-17 14:45:57,514 2AU ---- logger init ----
+2016-11-17 14:46:55,391 2AU ---- logger init ----
+2016-11-17 14:46:57,278 2AU ---- logger init ----
+2016-11-17 14:47:47,994 2AU ---- logger init ----
+2016-11-17 14:50:06,470 2AU ---- logger init ----
+2016-11-17 14:50:08,291 2AU ---- logger init ----
+2016-11-17 14:50:40,656 2AU ---- logger init ----
+2016-11-17 14:50:42,267 2AU ---- logger init ----
+2016-11-17 15:02:55,892 2AU ---- logger init ----
+2016-11-17 15:05:58,802 2AU ---- logger init ----
+2016-11-17 15:06:34,448 2AU ---- logger init ----
+2016-11-17 15:07:04,441 2AU ---- logger init ----
+2016-11-17 15:07:55,208 2AU ---- logger init ----
+2016-11-17 15:08:32,448 2AU ---- logger init ----
+2016-11-17 15:08:39,916 2AU ---- logger init ----
+2016-11-17 15:09:28,550 2AU ---- logger init ----
+2016-11-17 15:09:49,305 2AU ---- logger init ----
+2016-11-17 15:10:01,834 2AU ---- logger init ----
+2016-11-17 15:10:38,298 2AU ---- logger init ----
+2016-11-17 15:11:18,678 2AU ---- logger init ----
+2016-11-17 15:11:45,558 2AU ---- logger init ----
+2016-11-17 15:11:55,589 2AU ---- logger init ----
+2016-11-17 15:12:37,938 2AU ---- logger init ----
+2016-11-17 15:13:47,965 2AU ---- logger init ----
+2016-11-17 15:14:24,800 2AU ---- logger init ----
+2016-11-17 15:15:02,456 2AU ---- logger init ----
+2016-11-17 15:15:33,945 2AU ---- logger init ----
+2016-11-17 15:15:36,955 2AU ---- logger init ----
+2016-11-17 15:18:02,689 2AU ---- logger init ----
+2016-11-17 15:18:08,214 2AU ---- logger init ----
+2016-11-17 15:19:02,675 2AU ---- logger init ----
+2016-11-17 15:19:26,718 2AU ---- logger init ----
+2016-11-17 15:19:29,471 2AU ---- logger init ----
+2016-11-17 15:20:15,449 2AU ---- logger init ----
+2016-11-17 15:20:19,492 2AU ---- logger init ----
+2016-11-17 15:20:22,940 2AU ---- logger init ----
+2016-11-17 15:20:22,941 2AU selected rules : [4]
+2016-11-17 15:20:23,603 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-17 15:20:23,845 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 15:21:05,066 2AU ---- logger init ----
+2016-11-17 15:21:43,776 2AU ---- logger init ----
+2016-11-17 15:21:53,960 2AU ---- logger init ----
+2016-11-17 15:22:36,997 2AU ---- logger init ----
+2016-11-17 15:22:37,001 2AU selected rules : [4]
+2016-11-17 15:22:37,088 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-17 15:22:37,326 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 15:23:18,188 2AU ---- logger init ----
+2016-11-17 15:23:18,190 2AU selected rules : [8, 2]
+2016-11-17 15:23:18,622 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 15:23:19,037 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 15:23:29,867 2AU ---- logger init ----
+2016-11-17 15:23:29,869 2AU selected rules : [1]
+2016-11-17 15:26:30,987 2AU ---- logger init ----
+2016-11-17 15:26:30,989 2AU selected rules : [1]
+2016-11-17 15:26:30,989 2AU you have specified a playbook launch in the rules but you didn't present any playbook in params
+2016-11-17 15:26:40,333 2AU ---- logger init ----
+2016-11-17 15:26:40,334 2AU selected rules : [1]
+2016-11-17 15:26:40,334 2AU you have specified a playbook launch in the rules but you didn't present any playbook in params
+2016-11-17 15:26:46,121 2AU ---- logger init ----
+2016-11-17 15:26:46,122 2AU selected rules : [1]
+2016-11-17 15:26:47,230 p=32480 u=root |  PLAY [all] *********************************************************************
+2016-11-17 15:26:47,421 p=32480 u=root |   [WARNING]: The variable 'environment' appears to be used already, which is also used internally for environment variables set on the task/block/play. You should use a different variable name to avoid conflicts with this internal variable
+
+2016-11-17 15:26:47,422 p=32480 u=root |  TASK [setup] *******************************************************************
+2016-11-17 15:26:48,685 p=32480 u=root |  fatal: [codex-test.cro.st.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-11-17 15:26:48,713 p=32480 u=root |  	to retry, use: --limit @/root/2AU_python_script/playbook/playbooks/raf.retry
+
+2016-11-17 15:26:48,714 p=32480 u=root |  PLAY RECAP *********************************************************************
+2016-11-17 15:26:48,714 p=32480 u=root |  codex-test.cro.st.com      : ok=0    changed=0    unreachable=1    failed=0   
+2016-11-17 15:29:16,467 2AU ---- logger init ----
+2016-11-17 15:29:16,468 2AU selected rules : [1]
+2016-11-17 15:29:16,468 2AU you have specified a playbook launch in the rules but you didn't present any playbook in params
+2016-11-17 15:29:49,110 2AU ---- logger init ----
+2016-11-17 15:30:21,532 2AU ---- logger init ----
+2016-11-17 15:30:23,875 2AU ---- logger init ----
+2016-11-17 15:30:33,455 2AU ---- logger init ----
+2016-11-17 15:31:21,613 2AU ---- logger init ----
+2016-11-17 15:31:21,614 2AU selected rules : [4]
+2016-11-17 15:31:21,701 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-17 15:31:21,933 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-17 15:31:43,734 2AU ---- logger init ----
+2016-11-17 15:31:43,735 2AU selected rules : [4]
+2016-11-17 15:31:43,823 2AU recipients are specified in the template : ['mohamed-rafik.benmansour@st.com']
+2016-11-17 15:31:44,093 2AU mail sent from upgradeAutomation@st.com to ['mohamed-rafik.benmansour@st.com']
+2016-11-18 14:30:55,168 2AU ---- logger init ----
+2016-11-18 14:40:58,576 2AU ---- logger init ----
+2016-11-18 14:41:53,088 2AU ---- logger init ----
+2016-11-18 14:41:55,201 2AU ---- logger init ----
+2016-11-18 14:42:12,923 2AU ---- logger init ----
+2016-11-18 14:43:33,737 2AU ---- logger init ----
+2016-11-18 14:43:56,615 2AU ---- logger init ----
+2016-11-18 14:45:06,624 2AU ---- logger init ----
+2016-11-18 14:46:01,089 2AU ---- logger init ----
+2016-11-18 14:46:22,247 2AU ---- logger init ----
+2016-11-18 14:46:59,842 2AU ---- logger init ----
+2016-11-18 14:47:03,849 2AU ---- logger init ----
+2016-11-18 14:47:11,039 2AU ---- logger init ----
+2016-11-18 14:47:12,862 2AU ---- logger init ----
+2016-11-18 14:48:03,496 2AU ---- logger init ----
+2016-11-18 14:48:06,237 2AU ---- logger init ----
+2016-11-18 14:49:04,854 2AU ---- logger init ----
+2016-11-18 14:49:07,102 2AU ---- logger init ----
+2016-11-18 14:51:52,648 2AU ---- logger init ----
+2016-11-18 14:52:09,008 2AU ---- logger init ----
+2016-11-18 14:52:11,847 2AU ---- logger init ----
+2016-11-18 14:52:16,725 2AU ---- logger init ----
+2016-11-18 14:52:22,388 2AU ---- logger init ----
+2016-11-18 14:53:46,100 2AU ---- logger init ----
+2016-11-18 14:53:48,017 2AU ---- logger init ----
+2016-11-18 14:54:01,520 2AU ---- logger init ----
+2016-11-18 14:54:57,483 2AU ---- logger init ----
+2016-11-18 15:10:11,867 2AU ---- logger init ----
+2016-11-18 15:10:14,032 2AU ---- logger init ----
+2016-11-18 15:10:34,038 2AU ---- logger init ----
+2016-11-18 15:10:41,771 2AU ---- logger init ----
+2016-11-18 15:10:47,525 2AU ---- logger init ----
+2016-11-18 15:10:53,781 2AU ---- logger init ----
+2016-11-18 15:11:10,787 2AU ---- logger init ----
+2016-11-18 15:11:12,913 2AU ---- logger init ----
+2016-11-18 15:11:21,775 2AU ---- logger init ----
+2016-11-18 15:12:45,658 2AU ---- logger init ----
+2016-11-18 15:50:30,302 2AU ---- logger init ----
+2016-11-18 15:50:48,901 2AU ---- logger init ----
+2016-11-18 15:50:50,829 2AU ---- logger init ----
+2016-11-18 15:51:00,868 2AU ---- logger init ----
+2016-11-18 15:51:02,613 2AU ---- logger init ----
+2016-11-18 15:51:21,248 2AU ---- logger init ----
+2016-11-18 15:52:17,074 2AU ---- logger init ----
+2016-11-18 15:52:32,264 2AU ---- logger init ----
+2016-11-18 15:52:34,038 2AU ---- logger init ----
+2016-11-18 15:52:49,771 2AU ---- logger init ----
+2016-11-18 15:53:16,497 2AU ---- logger init ----
+2016-11-18 15:53:18,022 2AU ---- logger init ----
+2016-11-18 15:54:20,126 2AU ---- logger init ----
+2016-11-18 15:54:59,047 2AU ---- logger init ----
+2016-11-18 15:55:01,378 2AU ---- logger init ----
+2016-11-18 15:55:04,752 2AU ---- logger init ----
+2016-11-18 15:57:46,396 2AU ---- logger init ----
+2016-11-18 15:58:09,789 2AU ---- logger init ----
+2016-11-18 16:19:36,238 2AU ---- logger init ----
+2016-11-18 16:20:44,554 2AU ---- logger init ----
+2016-11-18 16:20:46,941 2AU ---- logger init ----
+2016-11-18 16:22:11,949 2AU ---- logger init ----
+2016-11-18 16:24:02,484 2AU ---- logger init ----
+2016-11-18 16:24:04,596 2AU ---- logger init ----
+2016-11-18 16:25:04,432 2AU ---- logger init ----
+2016-11-18 16:25:18,493 2AU ---- logger init ----
+2016-11-18 16:25:33,747 2AU ---- logger init ----
+2016-11-18 16:25:45,954 2AU ---- logger init ----
+2016-11-18 16:25:47,837 2AU ---- logger init ----
+2016-11-18 16:26:25,721 2AU ---- logger init ----
+2016-11-18 16:26:43,486 2AU ---- logger init ----
+2016-11-18 16:27:38,724 2AU ---- logger init ----
+2016-11-18 16:28:31,077 2AU ---- logger init ----
+2016-11-18 16:28:58,721 2AU ---- logger init ----
+2016-11-18 16:29:08,623 2AU ---- logger init ----
+2016-11-18 16:29:11,627 2AU ---- logger init ----
+2016-11-18 16:29:21,735 2AU ---- logger init ----
+2016-11-18 16:29:38,082 2AU ---- logger init ----
+2016-11-18 16:29:39,879 2AU ---- logger init ----
+2016-11-18 16:31:25,014 2AU ---- logger init ----
+2016-11-18 16:31:26,886 2AU ---- logger init ----
+2016-11-18 16:31:52,732 2AU ---- logger init ----
+2016-11-18 16:31:55,133 2AU ---- logger init ----
+2016-11-18 16:32:19,630 2AU ---- logger init ----
+2016-11-18 16:42:46,407 2AU ---- logger init ----
+2016-11-18 16:43:20,794 2AU ---- logger init ----
+2016-11-18 16:43:22,667 2AU ---- logger init ----
+2016-11-18 16:44:34,398 2AU ---- logger init ----
+2016-11-18 16:44:37,041 2AU ---- logger init ----
+2016-11-18 16:44:54,909 2AU ---- logger init ----
+2016-11-18 16:45:11,301 2AU ---- logger init ----
+2016-11-18 16:46:42,168 2AU ---- logger init ----
+2016-11-18 16:47:00,132 2AU ---- logger init ----
+2016-11-18 16:47:03,279 2AU ---- logger init ----
+2016-11-18 16:47:10,284 2AU ---- logger init ----
+2016-11-18 16:48:27,035 2AU ---- logger init ----
+2016-11-18 16:48:36,034 2AU ---- logger init ----
+2016-11-18 16:48:53,997 2AU ---- logger init ----
+2016-11-18 16:49:01,141 2AU ---- logger init ----
+2016-11-18 16:49:57,677 2AU ---- logger init ----
+2016-11-18 16:50:17,681 2AU ---- logger init ----
+2016-11-18 16:50:23,645 2AU ---- logger init ----
+2016-11-18 16:50:54,891 2AU ---- logger init ----
+2016-11-18 16:52:58,793 2AU ---- logger init ----
+2016-11-18 16:54:08,011 2AU ---- logger init ----
+2016-11-18 16:58:04,516 2AU ---- logger init ----
+2016-11-21 10:14:32,071 2AU ---- logger init ----
+2016-11-21 10:15:56,762 2AU ---- logger init ----

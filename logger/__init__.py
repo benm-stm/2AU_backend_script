@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # ------------------------------------------------------------------------------
-# ------------------------------------------------- PAQUETAGE playbook -----------
+# ------------------------------------------------- logger -----------
 # ------------------------------------------------------------------------------
 ##
 # @package sendMail
 # @brief Ce paquetage contient tous les objets de type objet_, c'est-à-dire les objets mathématiques.
 
-import sendMail
+import logger
 
-sendMail = sendMail.sendMail
+logger = logger.logger
